@@ -20,11 +20,14 @@
 * lors du chargement du programme, charger la liste depuis le serveur et/ou en local pour les choses modifiées
 * ajouter doc sur la configuration du code source pour une version de production personnalisée
 * ajouter page d'infos sur Delphi (téléchargement, doc, formation)
+* sur la saisie du type, modifier le champ de saisie pour proposer une liste des types existant déjà dans la base de données et pouvoir librement en choisir un ou ajouter un autre
 
 ## src-serveur : programmes de mise à jour et de gestion de l'API (en PHP)
 
 * ajouter traitement API suppression
 * ajouter doc sur la configuration du code source pour une version de production personnalisée
 * ajouter htaccess sur dossier "_PRIVE"
+* sur l'API de récupération de la liste, modifier le filtre afin de proposer un CONTAINS ou EQUAL
+* sur l'API de récupération de la liste, modifier le filtre afin de pouvoir indiquer plusieurs mots-clés dedans (séparés par des virgules)
 
 ## src-visu : scripts JS d'interrogation des données de l'API

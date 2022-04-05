@@ -36,7 +36,7 @@
 		}
 		else {
 			require_once(__DIR__."/_functions.inc.php");
-			$erreur_param = (! checkVerifChecksum($v, $auth, $event, priv_add_token));
+			$erreur_param = (! checkVerifChecksum($v, $auth, priv_add_token, $event));
 		}
 	}
 	else {
@@ -53,7 +53,7 @@
 		do {
 			$json->uid = GenerateID(20);
 		} while (file_exists($data_path."/".$json->uid.".json"));
-		file_put_contents($data_path."/".$json->uid.".json", json_encore($json));
+		file_put_contents($data_path."/".$json->uid.".json", json_encode($json));
 		header('Content-Type: text/plain; charset=utf8');
 		http_response_code(200);
 		print($json->uid);

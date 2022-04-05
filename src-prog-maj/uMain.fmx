@@ -13,7 +13,7 @@ object frmMain: TfrmMain
   object UserArray: TLayout
     Align = Client
     Size.Width = 661.000000000000000000
-    Size.Height = 504.000000000000000000
+    Size.Height = 554.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object EventsList: TListView
@@ -25,17 +25,18 @@ object frmMain: TfrmMain
       Size.Width = 335.000000000000000000
       Size.Height = 504.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 0
+      TabOrder = 1
       ItemAppearanceObjects.ItemObjects.Image.Visible = False
       OnItemClick = EventsListItemClick
     end
     object EventArray: TPanel
       Align = Right
       Position.X = 335.000000000000000000
+      Position.Y = 50.000000000000000000
       Size.Width = 326.000000000000000000
       Size.Height = 504.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 1
+      TabOrder = 2
       object lblLabel: TLabel
         Align = Top
         FocusControl = edtLabel
@@ -141,7 +142,7 @@ object frmMain: TfrmMain
       object edtStartTime: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Top
-        TabOrder = 7
+        TabOrder = 11
         Position.X = 5.000000000000000000
         Position.Y = 327.000000000000000000
         Margins.Left = 5.000000000000000000
@@ -170,7 +171,7 @@ object frmMain: TfrmMain
       object edtStopTime: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Top
-        TabOrder = 9
+        TabOrder = 12
         Position.X = 5.000000000000000000
         Position.Y = 386.000000000000000000
         Margins.Left = 5.000000000000000000
@@ -199,7 +200,7 @@ object frmMain: TfrmMain
       object edtURL: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Top
-        TabOrder = 11
+        TabOrder = 7
         KeyboardType = URL
         Position.X = 5.000000000000000000
         Position.Y = 209.000000000000000000
@@ -224,12 +225,12 @@ object frmMain: TfrmMain
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         Text = 'Stop time'
-        TabOrder = 12
+        TabOrder = 13
       end
       object edtStartDate: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Top
-        TabOrder = 13
+        TabOrder = 9
         Position.X = 5.000000000000000000
         Position.Y = 268.000000000000000000
         Margins.Left = 5.000000000000000000
@@ -299,41 +300,41 @@ object frmMain: TfrmMain
         end
       end
     end
-  end
-  object ToolBar1: TToolBar
-    Size.Width = 661.000000000000000000
-    Size.Height = 50.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 1
-    object btnSaveToServer: TButton
-      Align = Right
-      Margins.Left = 5.000000000000000000
-      Margins.Top = 5.000000000000000000
-      Margins.Right = 5.000000000000000000
-      Margins.Bottom = 5.000000000000000000
-      Position.X = 576.000000000000000000
-      Position.Y = 5.000000000000000000
-      Size.Width = 80.000000000000000000
-      Size.Height = 40.000000000000000000
+    object ToolBar1: TToolBar
+      Size.Width = 661.000000000000000000
+      Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
-      Text = 'Save'
-      OnClick = btnSaveToServerClick
-    end
-    object btnAddEvent: TButton
-      Align = Left
-      Margins.Left = 5.000000000000000000
-      Margins.Top = 5.000000000000000000
-      Margins.Right = 5.000000000000000000
-      Margins.Bottom = 5.000000000000000000
-      Position.X = 5.000000000000000000
-      Position.Y = 5.000000000000000000
-      Size.Width = 80.000000000000000000
-      Size.Height = 40.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 1
-      Text = 'Add event'
-      OnClick = btnAddEventClick
+      object btnSaveToServer: TButton
+        Align = Right
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 576.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 80.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Save'
+        OnClick = btnSaveToServerClick
+      end
+      object btnAddEvent: TButton
+        Align = Left
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 80.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Add event'
+        OnClick = btnAddEventClick
+      end
     end
   end
 end

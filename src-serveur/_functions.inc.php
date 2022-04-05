@@ -42,3 +42,7 @@
 		}
 		return $result;
 	}
+
+	function debug($txt) {
+		file_put_contents(__DIR__."/log.txt", @file_get_contents(__DIR__."/log.txt")."\r\n".$txt);
+	}

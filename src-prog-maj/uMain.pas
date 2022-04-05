@@ -130,7 +130,6 @@ begin
   showmessage('Chargement terminé. ' + Planning.Count.ToString +
     ' événements dans le planning');
 {$ENDIF}
-
   EventsList.Items.Clear;
   for i := 0 to Planning.Count - 1 do
     initEventListItem(EventsList.Items.Add, Planning[i]);
@@ -173,7 +172,10 @@ begin
   if assigned(EditedEvent) then
     event := EditedEvent
   else
+  begin
     event := tplanningevent.CreateFromJSONObject(nil);
+    Planning.Add(event);
+  end;
 
   event.EventLabel := edtLabel.Text;
   event.EventType := edtType.Text;

@@ -1,5 +1,19 @@
-# version du 04/04/2022 :
+# 20220405
+* débogage programme Delphi et corrections diverses
+* correction ordre des paramètres dans la vérification des checksum sur les endpoints de mise à jour (chanedevents.php et newevent.php)
+* correction du stockage et chargement des données dans les endpoints de mise à jour (chanedevents.php et newevent.php)
+* création d'un script JavaScript commun pour accéder en Ajax (XmlHttpRequest) à la liste des événements d'un planning sur un serveur donné
+* création d'un exemple d'utilisation de ce script dans une page HTML
+* ajout d'un .htaccess d'interdiction d'accès dans le dossier de stockage sur le serveur (base de données NoSQL)
+* ajout d'un .htaccess d'interdiction d'accès dans le dossier _PRIVE sur le serveur (configurations de production)
+* mise en place du script sur https://zone-abo.fr
+* activation du planning zone-Abo sur le blog https://developpeur-agk.fr/
+* activation du planning zone-Abo sur le blog https://developpeur-pascal.fr/
+* activation du planning zone-Abo sur le blog https://se-former-a-delphi.fr/
+* activation du planning zone-Abo sur le blog https://trucs-de-developpeur-web.fr/
+* activation du planning zone-Abo sur le blog https://trucs-de-sysadmin.fr/
 
+# 20220404
 * création du dépôt de code sur https://github.com/DeveloppeurPascal/Planning-API
 * mise en place de la documentation
 * définition de l'API

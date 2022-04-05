@@ -14,9 +14,13 @@ Un programme permet l'interrogation des données pour leur affichage sur un site
 
 Lors de son interrogation, le programme va aussi vérifier régulièrement le planning Twitch pour en incorporer les informations lorsqu'elles sont demandées.
 
+Ce dossier contient également le script getPlanningAPI.js qui permet de rapatrier le contenu d'un planning.
+
 ## src-visu : scripts JS d'interrogation des données de l'API
 
-Les scripts de consultation de l'API permettent aussi de l'afficher. Exemples utilisés pour les blogs comme https://developpeur-pascal.fr et https://trucs-de-developpeur-web.fr
+Exemple de pages HTML utilisant le script de consultation des données d'un planning hébergé sur un serveur.
+
+Exemples utilisés pour les blogs comme https://developpeur-pascal.fr et https://trucs-de-developpeur-web.fr
 
 ## Données traitées
 

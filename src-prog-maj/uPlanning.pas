@@ -140,7 +140,7 @@ type
 
 implementation
 
-uses              fmx.Types,
+uses fmx.Types,
   System.SysUtils, System.Threading, System.Net.HttpClient, uPlanningConsts,
   uChecksumVerif;
 
@@ -247,7 +247,10 @@ begin
     for i := 0 to Count - 1 do
       if items[i].isChanged and (not items[i].EventID.IsEmpty) then
         list.add(items[i].ToJSONObject);
-    SendChangedEventsToServerURL(list);
+    if (list.Count > 0) then
+      SendChangedEventsToServerURL(list)
+    else
+      list.Free;
   except
     list.Free;
   end;
@@ -289,7 +292,7 @@ begin
             end;
             if response.StatusCode = 200 then
             begin
-log.d(response.ContentAsString);
+              log.d(response.ContentAsString);
               jsa := TJSONArray.ParseJSONValue(response.ContentAsString
                 (TEncoding.UTF8)) as TJSONArray;
               if not assigned(jsa) then

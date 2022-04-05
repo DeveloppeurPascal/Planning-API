@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sample to display a list of events from Planning API project</title>
+	<script src="http://localhost/WebPlanningAPI/getPlanningAPI.js"></script>
+</head>
+<body>
+<div id="planning"></div>
+<script>
+    function refresh_planning(tabEvents) {
+        let liste = document.createElement('ul');
+        for (let i = 0; i < tabEvents.length; i++) {
+            let item = document.createElement('li');
+            liste.appendChild(item);
+			if (tabEvents[i].url.length > 0) {
+				let lien = document.createElement('a');
+				lien.setAttribute('href', tabEvents[i].url);
+				lien.textContent = tabEvents[i].label;
+				item.appendChild(lien);
+			}
+			else {
+				item.textContent = tabEvents[i].label;
+			}
+        }
+        document.getElementById('planning').appendChild(liste);
+    }
+
+	getPlanningAPI('http://localhost/WebPlanningAPI', (tabEvents) => {
+		console.log(tabEvents);
+		refresh_planning(tabEvents);
+	});
+</script>
+</body>
+</html>

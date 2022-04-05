@@ -21,6 +21,11 @@
 * ajouter doc sur la configuration du code source pour une version de production personnalisée
 * ajouter page d'infos sur Delphi (téléchargement, doc, formation)
 
+* ajouter une fonction d'export (pour backup)
+* ajouter une fonction d'import (pour récupération depuis un backup)
+
+* donner la possibilité de gérer plusieurs serveurs différents si on veut utiliser le même programme plutôt que tout avoir en dur dans l'exe directement
+
 ## src-serveur : programmes de mise à jour et de gestion de l'API (en PHP)
 
 * ajouter le traitement de l'API de suppression lorsqu'elle sera mise en place

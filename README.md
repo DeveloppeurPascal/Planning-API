@@ -2,6 +2,12 @@
 
 Programmes serveur et client de gestion d'un planning simple avec API de consultation.
 
+Ce projet a fait l'objet d'un développement en live sur Twitch. Les rediffusions et des informations complémentaires sont disponibles sur :
+
+* [Serial Streameur](https://serialstreameur.fr/planning-api.html) si vous voulez voir les replays complets
+* [Développeur Pascal](https://developpeur-pascal.fr/planning-api.html) pour la partie Delphi (programme de mise à jour, utilisation de l'API)
+* [Trucs de développeur web](https://trucs-de-developpeur-web.fr/planning-api.html) pour les parties client web (JavaScript) et serveur (PHP)
+
 ## src-prog-maj : programme de mise à jour des données (en Delphi)
 
 L'interface de mise à jour des données est développée sous forme d'application FireMonkey en Delphi. Elle peut tourner sur Windows, Mac et Linux (mais aussi sur tablettes Android&iOS si nécessaire).
@@ -41,13 +47,15 @@ Données stockées en JSON :
 	}
 ]
 
-Tous les champs sont sous forme de chaîne de caractère, sans contrôle de validité.
+Tous les champs sont sous forme de chaîne de caractères, sans contrôle de validité.
 
 ## Points d'entrée de l'API
 
 Les mises à jour ne peuvent se faire que depuis un programme identifié dans le serveur avec une clé publique et des clés privées pour chaque appel d'API.
 
 Tous les textes doivent être encodés en UTF-8. C'est l'encodage utilisé par le serveur en sortie.
+
+Vous pouvez utiliser les programmes fournis sur ce dépôt en test, mais si vous passez en production CHANGEZ LES TOKEN côté Delphi et PHP ! (et ne les publiez nulle part, bien entendu)
 
 ### Clés d'API pour les modifications
 

@@ -1,10 +1,12 @@
 # TODO list
 
 * implémenter une récupération du planning Twitch (de préférence en automatique depuis le serveur, mais possible en interactif avec choix des sessions à reprendre)
+
 * ajouter WARNING sur utilisation des codes sources sans modification des clés publiques et privées
+
 * ajouter un module de suppression des données ou filtrer l'envoi des informations en ne conservant que les événements futurs (filtrage côté serveur qui impliquerait que le format JSON soit connu, pas une bonne idée, de préférence à faire sur le module d'affichage en JS qui sait ce qu'on traite)
 
-* fournir un accès ICS à la liste des evénements (pour import automatique dans les calendriers de type Gmail, ou Apple)
+* fournir un accès ICS à la liste des evénements (pour import automatique dans les calendriers de type Gmail, ou Apple) avec filtrage sur le type (ce qui implique que la date et l'heure soient dans un format connu et que le fuseau horaire puisse être indiqué quelque part)
 
 ## src-prog-maj : programme de mise à jour des données (en Delphi)
 
@@ -25,6 +27,22 @@
 * ajouter une fonction d'import (pour récupération depuis un backup)
 
 * donner la possibilité de gérer plusieurs serveurs différents si on veut utiliser le même programme plutôt que tout avoir en dur dans l'exe directement
+
+* lorsque des modifications ont été faites sur des événements du planning, le signaler dans la liste tant qu'elles ne sont pas remontées au serveur
+
+* ne pas autoriser la fermeture du programme si des modifications sont en attente d'envoi au serveur sans confirmation de l'utlisateur
+
+* modifier le bouton "save" en "synchro"
+
+* signaler sur le bouton "save/synchro" qu'une synchronisation est nécessaire (des modifications sont en attente)
+
+* ajouter un écran de paramétrage permettant de saisir un serveur et ses clés de token pour pouvoir distribuer le logiciel en version compilée (par exemple sur CodeCanyon)
+
+* ajouter un écran "à propos" sur la version compilée/commercialisée du projet
+
+* ajouter un export des fichiers sources PHP/JS préconfigurés sur la version compilée du projet (avec génération intégrée des token) sous forme d'assistant d'installation/paramétrage
+
+* ajouter l'heure de fin en consultation dans la liste des événements affichée à l'écran
 
 ## src-serveur : programmes de mise à jour et de gestion de l'API (en PHP)
 

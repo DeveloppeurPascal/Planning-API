@@ -8,6 +8,8 @@
 
 * fournir un accès ICS à la liste des evénements (pour import automatique dans les calendriers de type Gmail, ou Apple) avec filtrage sur le type (ce qui implique que la date et l'heure soient dans un format connu et que le fuseau horaire puisse être indiqué quelque part)
 
+* faire une extension sous forme de panel pour la bio Twitch afin d'afficher les points intéressants du planning dessus
+
 ## src-prog-maj : programme de mise à jour des données (en Delphi)
 
 * ajouter le traitement de l'API de suppression lorsqu'elle sera mise en place

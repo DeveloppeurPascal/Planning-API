@@ -46,6 +46,22 @@
 
 * ajouter l'heure de fin en consultation dans la liste des événements affichée à l'écran
 
+* permettre de trier les informations dans la liste
+
+* changer les infos lorsqu'on utilise le clavier pour se déplacer dans la liste
+
+* savoir qu'on a fait des modifications sur le formulaire actuellement affiché et traiter son enregistrement en cas de changement de rurbique ou fermeture du programme
+
+* inciter à synchroniser les données en cas de fermeture si des mises à jour sont en attente
+
+* publier une version avec options du programme avec saisie clés API sans les avoir en dur dans les codes sources (pour ceux qui n'auraient pas les sources ou Delphi pour compiler)
+
+* mettre la version compilée du programme en vente sur itch.io
+
+* mettre la version compilée du programme en vente sur CodeCanyon
+
+* créer site / page planningapi.olfsoftware.fr
+
 ## src-serveur : programmes de mise à jour et de gestion de l'API (en PHP)
 
 * ajouter le traitement de l'API de suppression lorsqu'elle sera mise en place

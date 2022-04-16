@@ -58,6 +58,8 @@
 
 * mettre la version compilée du programme en vente sur itch.io
 
+* mettre la version compilée du programme en vente sur Gumroad
+
 * mettre la version compilée du programme en vente sur CodeCanyon
 
 * créer site / page planningapi.olfsoftware.fr

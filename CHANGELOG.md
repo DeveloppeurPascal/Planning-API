@@ -1,3 +1,8 @@
+# 20220427
+* création d'une icône à partir du SVG https://stock.adobe.com/fr/images/calendar-event/499291756 grâce à Pic Mob Generator (https://gamolf.itch.io/pic-mob-generator)
+* ajout de l'icône pour le programme Delphi
+* mise à jour des informations de version (numéro build + package) dans le programme Delphi
+
 # 20220405
 * débogage programme Delphi et corrections diverses
 * correction ordre des paramètres dans la vérification des checksum sur les endpoints de mise à jour (chanedevents.php et newevent.php)

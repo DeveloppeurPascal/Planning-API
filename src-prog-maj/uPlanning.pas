@@ -17,6 +17,7 @@ type
     FEventID: string;
     FEventURL: string;
     FisChanged: boolean;
+    FisDeleted: boolean;
     procedure SetEventLabel(const Value: string);
     procedure SetEventLanguage(const Value: string);
     procedure SetEventStartDate(const Value: string);
@@ -26,6 +27,7 @@ type
     procedure SetEventID(const Value: string);
     procedure SetEventURL(const Value: string);
     procedure SetisChanged(const Value: boolean);
+    procedure SetisDeleted(const Value: boolean);
   public
     /// <summary>
     /// Unique ID of this event (used for Edit/Delete), given by the server during loading the list and after a create call
@@ -66,6 +68,10 @@ type
     /// </summary>
     property isChanged: boolean read FisChanged write SetisChanged;
     /// <summary>
+    /// To know if this event has been deleted since it's last save (and must be sent to the server)
+    /// </summary>
+    property isDeleted: boolean read FisDeleted write SetisDeleted;
+    /// <summary>
     /// Create this event from its JSON representation
     /// </summary>
     constructor CreateFromJSONObject(JSON: TJSONObject);
@@ -101,6 +107,7 @@ type
     FServerURL: string;
     procedure SendChangedEventsToServerURL(Events: TJSONArray);
     procedure SendNewEventToServerURL(Event: TPlanningEvent);
+    procedure SendDeletedEventToServerURL(Event: TPlanningEvent);
   public
     /// <summary>
     /// Event raised when planning has been filled from the URL
@@ -245,7 +252,8 @@ begin
   list := TJSONArray.Create;
   try
     for i := 0 to Count - 1 do
-      if items[i].isChanged and (not items[i].EventID.IsEmpty) then
+      if items[i].isChanged and (not items[i].isDeleted) and
+        (not items[i].EventID.IsEmpty) then
         list.add(items[i].ToJSONObject);
     if (list.Count > 0) then
       SendChangedEventsToServerURL(list)
@@ -254,10 +262,21 @@ begin
   except
     list.Free;
   end;
+
   // Send new events to the server
   for i := 0 to Count - 1 do
-    if items[i].isChanged and (items[i].EventID.IsEmpty) then
+    if items[i].isChanged and (not items[i].isDeleted) and
+      (items[i].EventID.IsEmpty) then
       SendNewEventToServerURL(items[i]);
+
+  // Send deleted events to the server
+  for i := 0 to Count - 1 do
+    if items[i].isChanged and items[i].isDeleted then
+      if (items[i].EventID.IsEmpty) then
+        items[i].isChanged := false
+      else
+        SendDeletedEventToServerURL(items[i]);
+
   // TODO : call onAfterSave event when others all "Send" been closed
 end;
 
@@ -344,6 +363,59 @@ begin
         end;
       finally
         Events.Free;
+      end;
+    end);
+end;
+
+procedure TPlanning.SendDeletedEventToServerURL(Event: TPlanningEvent);
+begin
+  if not assigned(Event) then
+    raise exception.Create('No removed event to send to the serveur.');
+
+  ttask.Run(
+    procedure
+    var
+      server: thttpclient;
+      response: ihttpresponse;
+      params: tstringlist;
+    begin
+      server := thttpclient.Create;
+      try
+        try
+          params := tstringlist.Create;
+          try
+            params.AddPair('auth', CAuthToken);
+            params.AddPair('id', Event.EventID);
+            params.AddPair('v', ChecksumVerif.Get(CAuthToken, Cremovetoken,
+              Event.EventID));
+            response := server.post(FServerURL + 'rmvevent.php', params);
+          finally
+            params.Free;
+          end;
+          if response.StatusCode = 200 then
+          begin
+            Event.isChanged := false;
+            // TODO : taguer la fin du Save, donc appel de onSave
+          end
+          else if assigned(onSaveError) then
+            tthread.Queue(nil,
+              procedure
+              begin
+                if response.ContentAsString.IsEmpty then
+                  onSaveError(response.StatusCode, response.StatusText)
+                else
+                  onSaveError(response.StatusCode, response.ContentAsString);
+              end);
+        finally
+          server.Free;
+        end;
+      except
+        if assigned(onCreateError) then
+          tthread.Queue(nil,
+            procedure
+            begin
+              onSaveError(-1, 'planning update error (can''t remove item)');
+            end);
       end;
     end);
 end;
@@ -458,6 +530,7 @@ begin
       FEventURL := '';
   end;
   FisChanged := false;
+  FisDeleted := false;
 end;
 
 procedure TPlanningEvent.SetEventLabel(const Value: string);
@@ -505,6 +578,12 @@ end;
 procedure TPlanningEvent.SetisChanged(const Value: boolean);
 begin
   FisChanged := Value;
+end;
+
+procedure TPlanningEvent.SetisDeleted(const Value: boolean);
+begin
+  FisDeleted := Value;
+  isChanged := true;
 end;
 
 function TPlanningEvent.ToJSON: string;

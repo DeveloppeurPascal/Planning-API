@@ -4,6 +4,11 @@
 * mise à jour des informations de version (numéro build + package) dans le programme Delphi
 * ajout de l'heure de fin en consultation dans la liste des événements affichée à l'écran du programme Delphi de mise à jour
 * changer les infos lorsqu'on utilise le clavier pour se déplacer dans la liste
+* pouvoir supprimer des événements :
+=> modifier le programme client en ajoutant une option de suppression
+=> modifier l'API
+=> modifier le serveur pour prendre en charge la suppression
+
 
 # 20220405
 * débogage programme Delphi et corrections diverses

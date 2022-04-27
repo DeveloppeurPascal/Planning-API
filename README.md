@@ -55,7 +55,7 @@ Les mises à jour ne peuvent se faire que depuis un programme identifié dans le
 
 Tous les textes doivent être encodés en UTF-8. C'est l'encodage utilisé par le serveur en sortie.
 
-Vous pouvez utiliser les programmes fournis sur ce dépôt en test, mais si vous passez en production CHANGEZ LES TOKEN côté Delphi et PHP ! (et ne les publiez nulle part, bien entendu)
+**Vous pouvez utiliser les programmes fournis sur ce dépôt en test, mais si vous passez en production CHANGEZ LES TOKEN côté Delphi et PHP ! (et ne les publiez nulle part, bien entendu)**
 
 ### Clés d'API pour les modifications
 
@@ -98,4 +98,18 @@ Paramètres en entrée :
 	
 Sortie : 
 	- si http status code = 200, alors chaîne de caractères correspondant à la clé unique du nouvel élément
+	- sinon, texte de l'erreur
+
+### Suppression d'un événement
+
+POST url/rmvevent.php
+
+Paramètres en entrée :
+	auth : string, clé d'autorisation (publique)
+	id : string, uid de l'événement à supprimer
+	v : string, signature de l'appel (incluant une clé privée)
+	
+Sortie : 
+	- si http status code = 200, suppression effectuée
+	- si http status code = 404, événment inconnu sur le serveur
 	- sinon, texte de l'erreur

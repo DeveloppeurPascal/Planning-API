@@ -34,6 +34,8 @@ type
     ToolBar1: TToolBar;
     btnSaveToServer: TButton;
     btnAddEvent: TButton;
+    Layout1: TLayout;
+    btnDelete: TButton;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure btnSaveToServerClick(Sender: TObject);
@@ -41,6 +43,7 @@ type
     procedure btnCancelClick(Sender: TObject);
     procedure btnAddEventClick(Sender: TObject);
     procedure EventsListChange(Sender: TObject);
+    procedure btnDeleteClick(Sender: TObject);
   private
     FEditedEvent: tplanningevent;
     { Déclarations privées }
@@ -63,7 +66,7 @@ implementation
 
 {$R *.fmx}
 
-uses uPlanningConsts;
+uses uPlanningConsts, FMX.DialogService;
 
 procedure TfrmMain.APIAfterSave;
 begin
@@ -164,6 +167,30 @@ begin
   EditedEvent := nil;
 end;
 
+procedure TfrmMain.btnDeleteClick(Sender: TObject);
+begin
+  TDialogService.MessageDialog('Remove this event ?',
+    tmsgdlgtype.mtConfirmation, [tmsgdlgbtn.mbYes, tmsgdlgbtn.mbno],
+    tmsgdlgbtn.mbno, 0,
+    procedure(const AResult: TModalResult)
+    var
+      event: tplanningevent;
+    begin
+      if (AResult = mrYes) then
+      begin
+        if assigned(EditedEvent) then
+        begin
+          event := EditedEvent;
+          event.isDeleted := true;
+          if assigned(EventsList.Selected) and
+            ((EventsList.Selected.Tagobject as tplanningevent) = event) then
+            EventsList.Items.Delete(EventsList.ItemIndex);
+        end;
+        btnCancelClick(Sender);
+      end;
+    end);
+end;
+
 procedure TfrmMain.btnSaveClick(Sender: TObject);
 var
   event: tplanningevent;
@@ -204,8 +231,8 @@ end;
 
 procedure TfrmMain.EventsListChange(Sender: TObject);
 begin
-  if assigned(EventsList.Selected) and assigned(EventsList.Selected.Tagobject) and
-    (EventsList.Selected.Tagobject is tplanningevent) then
+  if assigned(EventsList.Selected) and assigned(EventsList.Selected.Tagobject)
+    and (EventsList.Selected.Tagobject is tplanningevent) then
   begin
     EditedEvent := EventsList.Selected.Tagobject as tplanningevent;
     EventArray.Visible := true;

@@ -2,8 +2,8 @@ object frmMain: TfrmMain
   Left = 0
   Top = 0
   Caption = 'Planning CRUD'
-  ClientHeight = 554
-  ClientWidth = 661
+  ClientHeight = 696
+  ClientWidth = 680
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -12,8 +12,8 @@ object frmMain: TfrmMain
   DesignerMasterStyle = 0
   object UserArray: TLayout
     Align = Client
-    Size.Width = 661.000000000000000000
-    Size.Height = 554.000000000000000000
+    Size.Width = 680.000000000000000000
+    Size.Height = 696.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object EventsList: TListView
@@ -22,8 +22,8 @@ object frmMain: TfrmMain
       HeaderAppearanceClassName = 'TListHeaderObjects'
       FooterAppearanceClassName = 'TListHeaderObjects'
       Align = Client
-      Size.Width = 335.000000000000000000
-      Size.Height = 504.000000000000000000
+      Size.Width = 354.000000000000000000
+      Size.Height = 646.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
       ItemAppearanceObjects.ItemObjects.Image.Visible = False
@@ -31,10 +31,10 @@ object frmMain: TfrmMain
     end
     object EventArray: TPanel
       Align = Right
-      Position.X = 335.000000000000000000
+      Position.X = 354.000000000000000000
       Position.Y = 50.000000000000000000
       Size.Width = 326.000000000000000000
-      Size.Height = 504.000000000000000000
+      Size.Height = 646.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
       object lblLabel: TLabel
@@ -299,9 +299,30 @@ object frmMain: TfrmMain
           OnClick = btnCancelClick
         end
       end
+      object Layout1: TLayout
+        Align = Top
+        Position.Y = 463.000000000000000000
+        Size.Width = 326.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 16
+        object btnDelete: TButton
+          Align = Client
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Size.Width = 316.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Delete event'
+          OnClick = btnDeleteClick
+        end
+      end
     end
     object ToolBar1: TToolBar
-      Size.Width = 661.000000000000000000
+      Size.Width = 680.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
@@ -311,7 +332,7 @@ object frmMain: TfrmMain
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Position.X = 576.000000000000000000
+        Position.X = 595.000000000000000000
         Position.Y = 5.000000000000000000
         Size.Width = 80.000000000000000000
         Size.Height = 40.000000000000000000

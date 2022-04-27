@@ -10,9 +10,20 @@
 
 * faire une extension sous forme de panel pour la bio Twitch afin d'afficher les points intéressants du planning dessus
 
+* activer un cache sur le programme events.php qui retourne la liste des événements disponibles
+=> modifier le serveur pour pouvoir appeler le programme avec et sans cache
+=> modifier le client Delphi pour utiliser la version sans cache du programme
+=> modifier le cache lors de chaque opération de mise à jour
+
+* pouvoir trier les événements dans le planning actuel
+=> ajouter un numéro d'ordre au niveau des événements
+=> prendre en charge le numéro d'ordre lors de l'envoi des informations depuis le serveur (cache ou en direct)
+=> pouvoir trier les éléments dans la liste sur le programme de saisie
+=> dans les scripts d'interrogation, traiter les infos dans l'ordre
+
+
 ## src-prog-maj : programme de mise à jour des données (en Delphi)
 
-* ajouter le traitement de l'API de suppression lorsqu'elle sera mise en place
 * sur la saisie du type, modifier le champ de saisie pour proposer une liste des types existant déjà dans la base de données et pouvoir librement en choisir un ou ajouter un autre
 * traiter le onAfterSave de TPlanning
 * éventuellement trier la liste des évenements sur l'écran principal (tri par libellé, date, type ou autre ?)
@@ -44,13 +55,9 @@
 
 * ajouter un export des fichiers sources PHP/JS préconfigurés sur la version compilée du projet (avec génération intégrée des token) sous forme d'assistant d'installation/paramétrage
 
-* ajouter l'heure de fin en consultation dans la liste des événements affichée à l'écran
-
 * permettre de trier les informations dans la liste
 
-* changer les infos lorsqu'on utilise le clavier pour se déplacer dans la liste
-
-* savoir qu'on a fait des modifications sur le formulaire actuellement affiché et traiter son enregistrement en cas de changement de rurbique ou fermeture du programme
+* savoir qu'on a fait des modifications sur le formulaire actuellement affiché et traiter son enregistrement en cas de changement de rubrique ou fermeture du programme
 
 * inciter à synchroniser les données en cas de fermeture si des mises à jour sont en attente
 
@@ -60,13 +67,10 @@
 
 * mettre la version compilée du programme en vente sur Gumroad
 
-* mettre la version compilée du programme en vente sur CodeCanyon
-
-* créer site / page planningapi.olfsoftware.fr
+* mettre en place le site https://planningapi.olfsoftware.fr
 
 ## src-serveur : programmes de mise à jour et de gestion de l'API (en PHP)
 
-* ajouter le traitement de l'API de suppression lorsqu'elle sera mise en place
 * sur l'API de récupération de la liste, modifier le filtre afin de proposer un CONTAINS ou EQUAL
 * sur l'API de récupération de la liste, modifier le filtre afin de pouvoir indiquer plusieurs mots-clés dedans (séparés par des virgules)
 

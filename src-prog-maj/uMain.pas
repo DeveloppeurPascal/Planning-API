@@ -96,7 +96,7 @@ procedure TfrmMain.initEventListItem(item: TListViewItem;
 begin
   item.Text := event.EventLabel;
   item.detail := event.EventType + ' | ' + event.EventStartDate + ' | ' +
-    event.EventStarttime;
+    event.EventStarttime + ' | ' + event.EventStoptime;
   item.Tagobject := event;
 end;
 
@@ -117,7 +117,7 @@ begin
     edtURL.Text := FEditedEvent.EventURL;
     edtStartDate.Text := FEditedEvent.EventStartDate;
     edtStartTime.Text := FEditedEvent.EventStarttime;
-    edtStopTime.Text := FEditedEvent.EventStopTime;
+    edtStopTime.Text := FEditedEvent.EventStoptime;
   end;
 end;
 
@@ -183,7 +183,7 @@ begin
   event.EventURL := edtURL.Text;
   event.EventStartDate := edtStartDate.Text;
   event.EventStarttime := edtStartTime.Text;
-  event.EventStopTime := edtStopTime.Text;
+  event.EventStoptime := edtStopTime.Text;
 
   if assigned(EventsList.Selected) and (EventsList.Selected.Tagobject = event)
     and (EventsList.Selected is TListViewItem) then

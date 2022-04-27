@@ -2,6 +2,7 @@
 * création d'une icône à partir du SVG https://stock.adobe.com/fr/images/calendar-event/499291756 grâce à Pic Mob Generator (https://gamolf.itch.io/pic-mob-generator)
 * ajout de l'icône pour le programme Delphi
 * mise à jour des informations de version (numéro build + package) dans le programme Delphi
+* ajout de l'heure de fin en consultation dans la liste des événements affichée à l'écran du programme Delphi de mise à jour
 
 # 20220405
 * débogage programme Delphi et corrections diverses

@@ -8,6 +8,7 @@
 => modifier le programme client en ajoutant une option de suppression
 => modifier l'API
 => modifier le serveur pour prendre en charge la suppression
+* correction de messages d'erreur en cas de problème réseau sur l'envoi des modifications du client vers le serveur
 
 
 # 20220405

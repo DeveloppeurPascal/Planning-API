@@ -358,7 +358,7 @@ begin
             tthread.Queue(nil,
               procedure
               begin
-                onSaveError(-1, 'planning creation error');
+                onSaveError(-1, 'planning update error (can''t update items)');
               end);
         end;
       finally
@@ -468,7 +468,7 @@ begin
           tthread.Queue(nil,
             procedure
             begin
-              onSaveError(-1, 'planning creation error');
+              onSaveError(-1, 'planning update error (can''t add item)');
             end);
       end;
     end);

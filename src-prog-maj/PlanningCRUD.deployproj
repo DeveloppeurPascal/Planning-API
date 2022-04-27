@@ -6,13 +6,13 @@
     <PropertyGroup>
         <DeviceId Condition="'$(Platform)'=='Android'"/>
         <DeviceId Condition="'$(Platform)'=='Android64'"/>
-        <DeviceId Condition="'$(Platform)'=='iOSDevice64'">00008027-00093081012B002E</DeviceId>
+        <DeviceId Condition="'$(Platform)'=='iOSDevice64'">45c8ed61760def4eac76b0e2152d217341810c3c</DeviceId>
     </PropertyGroup>
     <ItemGroup Condition="'$(Platform)'=='OSX64'">
-        <DeployFile Include="OSX64\Release\PlanningCRUD.info.plist" Condition="'$(Config)'=='Release'">
-            <RemoteDir>PlanningCRUD.app\Contents\</RemoteDir>
-            <RemoteName>Info.plist</RemoteName>
-            <DeployClass>ProjectOSXInfoPList</DeployClass>
+        <DeployFile Include="OSX64\Release\PlanningCRUD.entitlements" Condition="'$(Config)'=='Release'">
+            <RemoteDir>PlanningCRUD.app\..\</RemoteDir>
+            <RemoteName>PlanningCRUD.entitlements</RemoteName>
+            <DeployClass>ProjectOSXEntitlements</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -28,7 +28,7 @@
             <Overwrite>True</Overwrite>
             <Required>True</Required>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\delphi_PROJECTICNS.icns" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="..\assets\icons\PlanningAPI.icns" Condition="'$(Config)'=='Release'">
             <RemoteDir>PlanningCRUD.app\Contents\Resources\</RemoteDir>
             <RemoteName>PlanningCRUD.icns</RemoteName>
             <DeployClass>ProjectOSXResource</DeployClass>
@@ -37,28 +37,17 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="OSX64\Release\PlanningCRUD.entitlements" Condition="'$(Config)'=='Release'">
-            <RemoteDir>PlanningCRUD.app\..\</RemoteDir>
-            <RemoteName>PlanningCRUD.entitlements</RemoteName>
-            <DeployClass>ProjectOSXEntitlements</DeployClass>
+        <DeployFile Include="OSX64\Release\PlanningCRUD.info.plist" Condition="'$(Config)'=='Release'">
+            <RemoteDir>PlanningCRUD.app\Contents\</RemoteDir>
+            <RemoteName>Info.plist</RemoteName>
+            <DeployClass>ProjectOSXInfoPList</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
     </ItemGroup>
-    <ItemGroup Condition="'$(Platform)'=='Win32'">
-        <DeployFile Include="Win32\Debug\PlanningCRUD.exe" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>PlanningCRUD\</RemoteDir>
-            <RemoteName>PlanningCRUD.exe</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
-        </DeployFile>
-    </ItemGroup>
+    <ItemGroup Condition="'$(Platform)'=='Win32'"/>
     <ItemGroup Condition="'$(Platform)'=='Android64'"/>
     <ItemGroup Condition="'$(Platform)'=='Android'"/>
     <ItemGroup Condition="'$(Platform)'=='Win64'"/>

@@ -36,12 +36,11 @@ type
     btnAddEvent: TButton;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
-    procedure EventsListItemClick(const Sender: TObject;
-      const AItem: TListViewItem);
     procedure btnSaveToServerClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
     procedure btnAddEventClick(Sender: TObject);
+    procedure EventsListChange(Sender: TObject);
   private
     FEditedEvent: tplanningevent;
     { Déclarations privées }
@@ -203,13 +202,12 @@ begin
   Planning.Save;
 end;
 
-procedure TfrmMain.EventsListItemClick(const Sender: TObject;
-  const AItem: TListViewItem);
+procedure TfrmMain.EventsListChange(Sender: TObject);
 begin
-  if assigned(AItem) and assigned(AItem.Tagobject) and
-    (AItem.Tagobject is tplanningevent) then
+  if assigned(EventsList.Selected) and assigned(EventsList.Selected.Tagobject) and
+    (EventsList.Selected.Tagobject is tplanningevent) then
   begin
-    EditedEvent := AItem.Tagobject as tplanningevent;
+    EditedEvent := EventsList.Selected.Tagobject as tplanningevent;
     EventArray.Visible := true;
   end;
 end;

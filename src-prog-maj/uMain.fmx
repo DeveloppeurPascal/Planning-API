@@ -27,7 +27,7 @@ object frmMain: TfrmMain
       Size.PlatformDefault = False
       TabOrder = 1
       ItemAppearanceObjects.ItemObjects.Image.Visible = False
-      OnItemClick = EventsListItemClick
+      OnChange = EventsListChange
     end
     object EventArray: TPanel
       Align = Right

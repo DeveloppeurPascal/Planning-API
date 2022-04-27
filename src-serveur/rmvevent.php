@@ -45,8 +45,8 @@
 	}
 	else {
 		header('Content-Type: text/plain; charset=utf8');
-		if (is_file($data_path."/".$id.".json")) {
-			@unlink($data_path."/".$id.".json");
+		if (is_file($data_path."/".($FilteredID=FilterID($id)).".json")) {
+			@unlink($data_path."/".$FilteredID.".json");
 			http_response_code(200);
 		}
 		else {

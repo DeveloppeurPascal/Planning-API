@@ -9,7 +9,7 @@
 => modifier l'API
 => modifier le serveur pour prendre en charge la suppression
 * correction de messages d'erreur en cas de problème réseau sur l'envoi des modifications du client vers le serveur
-
+* ajout d'un contrôle de sécurité sur les ID des événements côté serveur afin de n'avoir que des caractères autorisés dans les ID qui servent aussi en noms de fichier (ajout FilterID() dans _functions.inc.php)
 
 # 20220405
 * débogage programme Delphi et corrections diverses

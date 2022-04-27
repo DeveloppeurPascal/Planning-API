@@ -66,8 +66,8 @@
 	else {
 		$result = array();
 		foreach($json as $event) {
-			if (is_object($event) && isset($event->uid) && file_exists($data_path."/".$event->uid.".json")) {
-				file_put_contents($data_path."/".$event->uid.".json", json_encode($event));
+			if (is_object($event) && isset($event->uid) && file_exists($data_path."/".($FilteredID=FilterID($event->uid)).".json")) {
+				file_put_contents($data_path."/".$FilteredID.".json", json_encode($event));
 				$result[] = $event->uid;
 			}
 		}

@@ -46,3 +46,18 @@
 	function debug($txt) {
 		file_put_contents(__DIR__."/log.txt", @file_get_contents(__DIR__."/log.txt")."\r\n".$txt);
 	}
+
+	function FilterID($id) {
+		$lettres = "0123456789abcdefghijklmnopqrstuvwxyzAZERTYUIOPMLKJHGFDSQWXCVBN";
+		$result = "";
+		for ($i = 0; $i < strlen($id); $i++) {
+			if (false !== strpos($lettres, ($c = substr($id,$i,1)))) {
+				$result .= $c;
+			}
+			else {
+				debug($id);
+				die("ID incorrect");
+			}
+		}
+		return $result;
+	}

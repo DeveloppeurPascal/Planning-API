@@ -311,7 +311,9 @@ begin
             end;
             if response.StatusCode = 200 then
             begin
+{$IFDEF DEBUG}
               log.d(response.ContentAsString);
+{$ENDIF}
               jsa := TJSONArray.ParseJSONValue(response.ContentAsString
                 (TEncoding.UTF8)) as TJSONArray;
               if not assigned(jsa) then

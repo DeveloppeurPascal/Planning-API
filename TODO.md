@@ -73,6 +73,8 @@
 
 * bogue : lorsqu'on referme le panel d'un item il reste sélectionné, ce qui empêche de le réafficher s'il n'y a pas d'autre item dans la liste pour se déplacer, il vaudrait mieux le désélectionner à la fermeture.
 
+* ajouter une recherche à la liste des événements
+
 ## src-serveur : programmes de mise à jour et de gestion de l'API (en PHP)
 
 * sur l'API de récupération de la liste, modifier le filtre afin de proposer un CONTAINS ou EQUAL

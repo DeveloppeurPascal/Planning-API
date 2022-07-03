@@ -10,6 +10,7 @@ const
   CChangedToken = '{8A97BCA1-AF2B-4D51-87FD-3E34EF95616A}';
   CRemoveToken = '{D3ABAE5C-074A-4B71-8116-2865418D8388}';
   CPlanningServerURL = 'http://localhost/WebPlanningAPI/';
+{$MESSAGE WARN 'Remember to not use DEBUG token for production. Compile program in RELEASE mode.'}
 {$ELSE}
 {$I '..\_PRIVE\token.inc.pas'}
 {$I '..\_PRIVE\consts.inc.pas'}

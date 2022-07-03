@@ -10,6 +10,17 @@ function getPlanningAPI(serveur_url, callback) {
 
     function afterevent() {
         // console.log(request.response);
-		callback(request.response);
+		let liste = request.response;
+		liste.sort(function(a,b) {
+			if (! (a.order)) {
+				a.order = -1;
+			}
+			if (! (b.order)) {
+				b.order = -1;
+			}
+			// console.log (a.order);
+			return a.order - b.order;
+		});
+		callback(liste);
     }
 }

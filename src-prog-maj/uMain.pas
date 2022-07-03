@@ -274,6 +274,8 @@ begin
     CheckIfPlanningHasBeenSentToTheServer.enabled := false;
     btnSaveToServerGlowEffect.enabled := false;
     btnSaveToServer.enabled := true;
+    if assigned(Planning.onAfterSave) then
+      Planning.onAfterSave;
   end;
 end;
 

@@ -44,6 +44,7 @@ Données stockées en JSON :
 		stoptime : heure de fin
 		language : langue
 		url : adresse Internet de l'évenement
+		order : numéro d'ordre de l'événement dans la liste (utilisé pour les tris)
 	}
 ]
 

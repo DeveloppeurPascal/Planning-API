@@ -245,11 +245,13 @@ object frmMain: TfrmMain
       end
       object GridPanelLayout1: TGridPanelLayout
         Align = Top
-        Position.Y = 413.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.Y = 477.000000000000000000
         Size.Width = 326.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 14
+        TabOrder = 16
         ColumnCollection = <
           item
             Value = 50.000000000000000000
@@ -303,11 +305,11 @@ object frmMain: TfrmMain
       end
       object Layout1: TLayout
         Align = Top
-        Position.Y = 463.000000000000000000
+        Position.Y = 532.000000000000000000
         Size.Width = 326.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 16
+        TabOrder = 17
         object btnDelete: TButton
           Align = Client
           Margins.Left = 5.000000000000000000
@@ -321,6 +323,35 @@ object frmMain: TfrmMain
           Text = 'Delete event'
           OnClick = btnDeleteClick
         end
+      end
+      object lblOrder: TLabel
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 418.000000000000000000
+        Size.Width = 316.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Order'
+        TabOrder = 14
+      end
+      object edtOrder: TNumberBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 15
+        Cursor = crIBeam
+        Position.X = 5.000000000000000000
+        Position.Y = 445.000000000000000000
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 316.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
       end
     end
     object ToolBar1: TToolBar

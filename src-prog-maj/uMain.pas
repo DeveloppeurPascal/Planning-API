@@ -8,7 +8,7 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, uPlanning,
   FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base,
   FMX.Layouts, FMX.ListView, FMX.Controls.Presentation, FMX.StdCtrls, FMX.Edit,
-  FMX.Effects;
+  FMX.Effects, FMX.EditBox, FMX.NumberBox;
 
 type
   TfrmMain = class(TForm)
@@ -39,6 +39,8 @@ type
     btnDelete: TButton;
     btnSaveToServerGlowEffect: TGlowEffect;
     CheckIfPlanningHasBeenSentToTheServer: TTimer;
+    lblOrder: TLabel;
+    edtOrder: TNumberBox;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure btnSaveToServerClick(Sender: TObject);
@@ -117,6 +119,9 @@ begin
   EditedEvent := nil;
   Planning := tplanning.CreateFromURL(CPlanningServerURL, APIReadyEvent,
     APIErrorEvent);
+
+  edtOrder.Min := low(integer);
+  edtOrder.Max := high(integer);
 end;
 
 procedure TfrmMain.FormDestroy(Sender: TObject);
@@ -151,6 +156,7 @@ begin
     edtStartDate.Text := FEditedEvent.EventStartDate;
     edtStartTime.Text := FEditedEvent.EventStarttime;
     edtStopTime.Text := FEditedEvent.EventStoptime;
+    edtOrder.Value := FEditedEvent.EventOrder;
   end
   else
     EventsList.Selected := nil;
@@ -165,6 +171,7 @@ begin
   showmessage('Chargement terminé. ' + Planning.Count.ToString +
     ' événements dans le planning');
 {$ENDIF}
+  Planning.SortPlanningEvents;
   EventsList.Items.Clear;
   for i := 0 to Planning.Count - 1 do
     initEventListItem(EventsList.Items.Add, Planning[i]);
@@ -190,6 +197,7 @@ begin
   edtStartDate.Text := '';
   edtStartTime.Text := '';
   edtStopTime.Text := '';
+  edtOrder.Value := -1;
 
   EventArray.Visible := true;
 end;
@@ -244,6 +252,7 @@ begin
   event.EventStartDate := edtStartDate.Text;
   event.EventStarttime := edtStartTime.Text;
   event.EventStoptime := edtStopTime.Text;
+  event.EventOrder := trunc(edtOrder.Value);
 
   if assigned(EventsList.Selected) and (EventsList.Selected.Tagobject = event)
     and (EventsList.Selected is TListViewItem) then

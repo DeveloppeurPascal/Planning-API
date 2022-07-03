@@ -3,7 +3,8 @@ unit uPlanning;
 interface
 
 uses
-  System.Classes, System.Generics.Collections, System.JSON;
+  System.Classes, System.Generics.Collections, System.Generics.Defaults,
+  System.JSON;
 
 type
   TPlanningEvent = class
@@ -18,6 +19,7 @@ type
     FEventURL: string;
     FisChanged: boolean;
     FisDeleted: boolean;
+    FEventOrder: integer;
     procedure SetEventLabel(const Value: string);
     procedure SetEventLanguage(const Value: string);
     procedure SetEventStartDate(const Value: string);
@@ -28,6 +30,7 @@ type
     procedure SetEventURL(const Value: string);
     procedure SetisChanged(const Value: boolean);
     procedure SetisDeleted(const Value: boolean);
+    procedure SetEventOrder(const Value: integer);
   public
     /// <summary>
     /// Unique ID of this event (used for Edit/Delete), given by the server during loading the list and after a create call
@@ -64,6 +67,10 @@ type
     /// </summary>
     property EventURL: string read FEventURL write SetEventURL;
     /// <summary>
+    /// Order of the event in the planning (event list)
+    /// </summary>
+    property EventOrder: integer read FEventOrder write SetEventOrder;
+    /// <summary>
     /// To know if this event has been changed since it's last save
     /// </summary>
     property isChanged: boolean read FisChanged write SetisChanged;
@@ -83,6 +90,12 @@ type
     /// Export this event as its JSON Object representation
     /// </summary>
     function ToJSONObject: TJSONObject;
+  end;
+
+  TPlanningEventComparer = class(tinterfacedobject, IComparer<TPlanningEvent>)
+  public
+    function Compare(const Left: TPlanningEvent;
+      const Right: TPlanningEvent): integer;
   end;
 
   TPlanningReadyEvent = procedure of object;
@@ -138,7 +151,7 @@ type
     /// <summary>
     /// Create constructor to deny its usage...
     /// </summary>
-    constructor Create; deprecated 'use CreateFrumURL';
+    constructor Create; deprecated 'use CreateFromURL';
     /// <summary>
     /// Send changed or created objects to the server
     /// </summary>
@@ -148,6 +161,10 @@ type
     /// Return False if nothing has been changed since last refresh of the list (upload completed or just downloaded without any change)
     /// </summary>
     function hasChanged: boolean;
+    /// <summary>
+    /// Sort events depending on them "order" property
+    /// </summary>
+    procedure SortPlanningEvents;
   end;
 
 implementation
@@ -165,6 +182,7 @@ const
   CEventLanguageKey = 'language'; // property name for JSON object
   CEventURLKey = 'url'; // property name for JSON object
   CEventUIDKey = 'uid'; // property name for JSON object
+  CEventOrderKey = 'order'; // property name for JSON object
 
   { TPlanning }
 
@@ -469,7 +487,7 @@ begin
           if response.StatusCode = 200 then
           begin
             Event.EventID := response.ContentAsString;
-            event.isChanged:=false;
+            Event.isChanged := false;
             // TODO : taguer la fin du Save, donc appel de onSave
           end
           else if assigned(onSaveError) then
@@ -515,6 +533,18 @@ begin
   FonSaveError := Value;
 end;
 
+procedure TPlanning.SortPlanningEvents;
+var
+  comp: TPlanningEventComparer;
+begin
+  comp := TPlanningEventComparer.Create;
+  try
+    sort(comp);
+  finally
+    comp.Free;
+  end;
+end;
+
 { TPlanningEvent }
 
 constructor TPlanningEvent.CreateFromJSONObject(JSON: TJSONObject);
@@ -530,6 +560,7 @@ begin
     FEventStartTime := '';
     FEventID := '';
     FEventURL := '';
+    FEventOrder := -1;
   end
   else
   begin
@@ -549,6 +580,8 @@ begin
       FEventID := '';
     if not JSON.TryGetValue<string>(CEventURLKey, FEventURL) then
       FEventURL := '';
+    if not JSON.TryGetValue<integer>(CEventOrderKey, FEventOrder) then
+      FEventOrder := -1;
   end;
   FisChanged := false;
   FisDeleted := false;
@@ -564,6 +597,12 @@ procedure TPlanningEvent.SetEventLanguage(const Value: string);
 begin
   FisChanged := FisChanged or (FEventLanguage <> Value);
   FEventLanguage := Value;
+end;
+
+procedure TPlanningEvent.SetEventOrder(const Value: integer);
+begin
+  FisChanged := FisChanged or (FEventOrder <> Value);
+  FEventOrder := Value;
 end;
 
 procedure TPlanningEvent.SetEventStartDate(const Value: string);
@@ -630,6 +669,7 @@ begin
   result.AddPair(CEventStopTimeKey, FEventStopTime);
   result.AddPair(CEventLanguageKey, FEventLanguage);
   result.AddPair(CEventURLKey, FEventURL);
+  result.AddPair(CEventOrderKey, FEventOrder);
 end;
 
 procedure TPlanningEvent.SetEventID(const Value: string);
@@ -637,6 +677,14 @@ begin
   // Only changed by server request, so no local change to send to the server
   // FisChanged := FisChanged or (FEventID <> Value);
   FEventID := Value;
+end;
+
+{ TPlanningEventComparer }
+
+function TPlanningEventComparer.Compare(const Left,
+  Right: TPlanningEvent): integer;
+begin
+  result := Left.EventOrder - Right.EventOrder;
 end;
 
 end.

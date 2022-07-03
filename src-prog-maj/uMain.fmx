@@ -28,6 +28,7 @@ object frmMain: TfrmMain
       TabOrder = 1
       ItemAppearanceObjects.ItemObjects.Image.Visible = False
       OnChange = EventsListChange
+      SearchVisible = True
     end
     object EventArray: TPanel
       Align = Right

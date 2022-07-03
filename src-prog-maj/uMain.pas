@@ -48,8 +48,10 @@ type
     procedure EventsListChange(Sender: TObject);
     procedure btnDeleteClick(Sender: TObject);
     procedure CheckIfPlanningHasBeenSentToTheServerTimer(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
   private
     FEditedEvent: tplanningevent;
+    FCloseWithoutSavingChanges: Boolean;
     { Déclarations privées }
     procedure APIErrorEvent(HTTPStatusCode: integer; ErrorText: string);
     procedure APISaveErrorEvent(HTTPStatusCode: integer; ErrorText: string);
@@ -83,10 +85,33 @@ begin
   showmessage(HTTPStatusCode.ToString + ' - ' + ErrorText);
 end;
 
+procedure TfrmMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+begin
+  if Planning.hasChanged and not FCloseWithoutSavingChanges then
+  begin
+    CanClose := false;
+    TDialogService.MessageDialog
+      ('Planning not saved. Do you want to close without saving its changes ?',
+      tmsgdlgtype.mtConfirmation, [tmsgdlgbtn.mbYes, tmsgdlgbtn.mbNo],
+      tmsgdlgbtn.mbNo, 0,
+      procedure(const AResult: TModalResult)
+      begin
+        if AResult = mryes then
+        begin
+          FCloseWithoutSavingChanges := true;
+          Close;
+        end
+        else
+          FCloseWithoutSavingChanges := false;
+      end);
+  end;
+end;
+
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
+  FCloseWithoutSavingChanges := false;
   CheckIfPlanningHasBeenSentToTheServer.enabled := false;
-    btnSaveToServerGlowEffect.enabled := false;
+  btnSaveToServerGlowEffect.enabled := false;
   EventArray.Visible := false;
   UserArray.enabled := false;
   EditedEvent := nil;
@@ -100,7 +125,7 @@ begin
 end;
 
 procedure TfrmMain.initEventListItem(item: TListViewItem;
-  event: tplanningevent);
+event: tplanningevent);
 begin
   item.Text := event.EventLabel;
   item.detail := event.EventType + ' | ' + event.EventStartDate + ' | ' +
@@ -148,7 +173,7 @@ begin
 end;
 
 procedure TfrmMain.APISaveErrorEvent(HTTPStatusCode: integer;
-  ErrorText: string);
+ErrorText: string);
 begin
   APIErrorEvent(HTTPStatusCode, ErrorText);
   // TODO : débloquer champs de saisie une fois la fin de la sauvegarde
@@ -178,13 +203,13 @@ end;
 procedure TfrmMain.btnDeleteClick(Sender: TObject);
 begin
   TDialogService.MessageDialog('Remove this event ?',
-    tmsgdlgtype.mtConfirmation, [tmsgdlgbtn.mbYes, tmsgdlgbtn.mbno],
-    tmsgdlgbtn.mbno, 0,
+    tmsgdlgtype.mtConfirmation, [tmsgdlgbtn.mbYes, tmsgdlgbtn.mbNo],
+    tmsgdlgbtn.mbNo, 0,
     procedure(const AResult: TModalResult)
     var
       event: tplanningevent;
     begin
-      if (AResult = mrYes) then
+      if (AResult = mryes) then
       begin
         if assigned(EditedEvent) then
         begin
@@ -267,5 +292,6 @@ initialization
 {$IFDEF DEBUG}
   ReportMemoryLeaksOnShutdown := true;
 {$ENDIF}
+TDialogService.PreferredMode := TDialogService.TPreferredMode.Async;
 
 end.

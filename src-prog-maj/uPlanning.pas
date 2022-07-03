@@ -143,6 +143,11 @@ type
     /// Send changed or created objects to the server
     /// </summary>
     procedure Save;
+    /// <summary>
+    /// Return True if an item (new, updated or deleted) needs to be sent to the server
+    /// Return False if nothing has been changed since last refresh of the list (upload completed or just downloaded without any change)
+    /// </summary>
+    function hasChanged: boolean;
   end;
 
 implementation
@@ -241,6 +246,19 @@ begin
             end);
       end;
     end);
+end;
+
+function TPlanning.hasChanged: boolean;
+var
+  i: integer;
+begin
+  result := false;
+  for i := 0 to Count - 1 do
+    if items[i].isChanged or items[i].isDeleted then
+    begin
+      result := true;
+      break;
+    end;
 end;
 
 procedure TPlanning.Save;

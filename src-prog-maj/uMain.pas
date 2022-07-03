@@ -7,7 +7,8 @@ uses
   System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, uPlanning,
   FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base,
-  FMX.Layouts, FMX.ListView, FMX.Controls.Presentation, FMX.StdCtrls, FMX.Edit;
+  FMX.Layouts, FMX.ListView, FMX.Controls.Presentation, FMX.StdCtrls, FMX.Edit,
+  FMX.Effects;
 
 type
   TfrmMain = class(TForm)
@@ -36,6 +37,8 @@ type
     btnAddEvent: TButton;
     Layout1: TLayout;
     btnDelete: TButton;
+    btnSaveToServerGlowEffect: TGlowEffect;
+    CheckIfPlanningHasBeenSentToTheServer: TTimer;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure btnSaveToServerClick(Sender: TObject);
@@ -44,6 +47,7 @@ type
     procedure btnAddEventClick(Sender: TObject);
     procedure EventsListChange(Sender: TObject);
     procedure btnDeleteClick(Sender: TObject);
+    procedure CheckIfPlanningHasBeenSentToTheServerTimer(Sender: TObject);
   private
     FEditedEvent: tplanningevent;
     { Déclarations privées }
@@ -81,6 +85,8 @@ end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
+  CheckIfPlanningHasBeenSentToTheServer.enabled := false;
+    btnSaveToServerGlowEffect.enabled := false;
   EventArray.Visible := false;
   UserArray.enabled := false;
   EditedEvent := nil;
@@ -190,6 +196,7 @@ begin
         end;
         btnCancelClick(Sender);
       end;
+      btnSaveToServerGlowEffect.enabled := Planning.hasChanged;
     end);
 end;
 
@@ -221,14 +228,28 @@ begin
 
   EventArray.Visible := false;
   EditedEvent := nil;
+
+  btnSaveToServerGlowEffect.enabled := Planning.hasChanged;
 end;
 
 procedure TfrmMain.btnSaveToServerClick(Sender: TObject);
 begin
+  btnSaveToServer.enabled := false;
+  CheckIfPlanningHasBeenSentToTheServer.enabled := true;
   Planning.onSaveError := APISaveErrorEvent;
   Planning.onAfterSave := APIAfterSave;
   // TODO : bloquer champs de saisie en attendant la fin de la sauvegarde
   Planning.Save;
+end;
+
+procedure TfrmMain.CheckIfPlanningHasBeenSentToTheServerTimer(Sender: TObject);
+begin
+  if (not Planning.hasChanged) then
+  begin
+    CheckIfPlanningHasBeenSentToTheServer.enabled := false;
+    btnSaveToServerGlowEffect.enabled := false;
+    btnSaveToServer.enabled := true;
+  end;
 end;
 
 procedure TfrmMain.EventsListChange(Sender: TObject);

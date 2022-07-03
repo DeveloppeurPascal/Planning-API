@@ -333,13 +333,13 @@ object frmMain: TfrmMain
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Position.X = 595.000000000000000000
+        Position.X = 515.000000000000000000
         Position.Y = 5.000000000000000000
-        Size.Width = 80.000000000000000000
+        Size.Width = 160.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
-        Text = 'Save'
+        Text = 'Send changes'
         OnClick = btnSaveToServerClick
       end
       object btnAddEvent: TButton

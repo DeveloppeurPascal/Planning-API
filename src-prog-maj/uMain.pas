@@ -120,7 +120,9 @@ begin
     edtStartDate.Text := FEditedEvent.EventStartDate;
     edtStartTime.Text := FEditedEvent.EventStarttime;
     edtStopTime.Text := FEditedEvent.EventStoptime;
-  end;
+  end
+  else
+    EventsList.Selected := nil;
 end;
 
 procedure TfrmMain.APIReadyEvent;

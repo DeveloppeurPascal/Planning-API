@@ -254,7 +254,7 @@ var
 begin
   result := false;
   for i := 0 to Count - 1 do
-    if items[i].isChanged or items[i].isDeleted then
+    if items[i].isChanged then
     begin
       result := true;
       break;
@@ -469,6 +469,7 @@ begin
           if response.StatusCode = 200 then
           begin
             Event.EventID := response.ContentAsString;
+            event.isChanged:=false;
             // TODO : taguer la fin du Save, donc appel de onSave
           end
           else if assigned(onSaveError) then

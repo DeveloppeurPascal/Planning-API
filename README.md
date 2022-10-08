@@ -1,116 +1,118 @@
 # Planning-API
 
-Programmes serveur et client de gestion d'un planning simple avec API de consultation.
+Server and client programs for managing a simple schedule with a consultation API.
 
-Ce projet a fait l'objet d'un développement en live sur Twitch. Les rediffusions et des informations complémentaires sont disponibles sur :
+This project has been developed live on Twitch. Replays and additional information are available on :
 
-* [Serial Streameur](https://serialstreameur.fr/planning-api.html) si vous voulez voir les replays complets
-* [Développeur Pascal](https://developpeur-pascal.fr/planning-api.html) pour la partie Delphi (programme de mise à jour, utilisation de l'API)
-* [Trucs de développeur web](https://trucs-de-developpeur-web.fr/planning-api.html) pour les parties client web (JavaScript) et serveur (PHP)
+* [Serial Streamer](https://serialstreameur.fr/planning-api.html) if you want to see the full replays
+* [Pascal Developer](https://developpeur-pascal.fr/planning-api.html) for the Delphi part (update program, use of the API)
+* [Web developer tips](https://trucs-de-developpeur-web.fr/planning-api.html) for the web client (JavaScript) and server (PHP) parts
 
-## src-prog-maj : programme de mise à jour des données (en Delphi)
+## src-prog-maj : data update program (in Delphi)
 
-L'interface de mise à jour des données est développée sous forme d'application FireMonkey en Delphi. Elle peut tourner sur Windows, Mac et Linux (mais aussi sur tablettes Android&iOS si nécessaire).
+The data update interface is developed as a FireMonkey application in Delphi. It can run on Windows, Mac and Linux (but also on Android&iOS tablets if needed).
 
-## src-serveur : programmes de mise à jour et de gestion de l'API (en PHP)
+You can use [the free Community Edition of Delphi](https://www.embarcadero.com/products/delphi/starter) to compile this program for your personal use, [the Academic version of RAD Studio](https://www.embarcadero.com/development-tools-for-education) if you are in education or [one of the editions dedicated to professional users](https://www.embarcadero.com/products/delphi).
 
-Le serveur gère le CRUD sur les données du planning et les stocke sans base de données (directement en JSON).
+## src-serveur : programs for updating and managing the API (in PHP)
 
-Un programme permet l'interrogation des données pour leur affichage sur un site oueb ou ailleurs sous forme d'API REST en JSON.
+The server manages the CRUD on the planning data and stores them without database (directly in JSON).
 
-Lors de son interrogation, le programme va aussi vérifier régulièrement le planning Twitch pour en incorporer les informations lorsqu'elles sont demandées.
+A program allows the interrogation of the data for their display on a web site or elsewhere in the form of REST API in JSON.
 
-Ce dossier contient également le script getPlanningAPI.js qui permet de rapatrier le contenu d'un planning.
+This folder also contains the script getPlanningAPI.js which allows to retrieve the content of a schedule.
 
-## src-visu : scripts JS d'interrogation des données de l'API
+## src-visu : JS scripts for querying API data
 
-Exemple de pages HTML utilisant le script de consultation des données d'un planning hébergé sur un serveur.
+Example of HTML pages using the script to consult the data of a planning hosted on a server.
 
-Exemples utilisés pour les blogs comme https://developpeur-pascal.fr et https://trucs-de-developpeur-web.fr
+Examples used for blogs like https://developpeur-pascal.fr and https://trucs-de-developpeur-web.fr
 
-## Données traitées
+## Processed data
 
-Les données gérées par ces programmes sont des informations de planning dans le fuseau horaire du site (et non celui de l'internaute les consultant).
+The data managed by these programs are planning information in the time zone of the site (no control, no timezone conversion).
 
-Données stockées en JSON :
+Data stored in JSON :
 
+```JSON
 [
 	{
-		uid : ID de l'évenement dans la liste (valeur unique)
-		label : libellé de l'évenement
-		type : type d'événement (conférence, formation, Twitch, webinaire)
+		uid : ID of the event in the list (unique value)
+		label : label of the event
+		type : type of event (conference, training, Twitch, webinar)
 		startdate : date
-		starttime : heure de début
-		stoptime : heure de fin
-		language : langue
-		url : adresse Internet de l'évenement
-		order : numéro d'ordre de l'événement dans la liste (utilisé pour les tris)
+		starttime : start time
+		stoptime : end time
+		language : language
+		url : Internet address of the event
+		order : order number of the event in the list (used for sorting)
 	}
 ]
+```
 
-Tous les champs sont sous forme de chaîne de caractères, sans contrôle de validité.
+All the fields are in string form, without validity check.
 
-## Points d'entrée de l'API
+## API entry points
 
-Les mises à jour ne peuvent se faire que depuis un programme identifié dans le serveur avec une clé publique et des clés privées pour chaque appel d'API.
+Updates can only be made from a program identified in the server with a public key and private keys for each API call.
 
-Tous les textes doivent être encodés en UTF-8. C'est l'encodage utilisé par le serveur en sortie.
+All texts must be encoded in UTF-8. This is the encoding used by the output server.
 
-**Vous pouvez utiliser les programmes fournis sur ce dépôt en test, mais si vous passez en production CHANGEZ LES TOKEN côté Delphi et PHP ! (et ne les publiez nulle part, bien entendu)**
+**You can use the programs provided on this repository for testing, but if you go to production CHANGE THE TOKEN on the Delphi and PHP side! (and don't publish them anywhere, of course)**
 
-### Clés d'API pour les modifications
+### API keys for modifications
 
-auth_token => clé publique passée lors de chaque appel de modification
-add_token => clé de signature privée (connue en dur côté serveur et côté client)
-change_token => clé de signature privée (connue en dur côté serveur et côté client)
+* auth_token => public key passed on each modification call
+* add_token => private signing key (known in hard on server and client side)
+* change_token => private signing key (known in hard on server and client side)
 
-### Liste des événements du planning
+### List of events in the schedule
 
 GET url/events.php
 
-Paramètres en entrée :
-	type : facultatif, string, type d'événement dont on veut la liste
+Input parameters:
+* type: optional, string, type of event we want the list of
 	
-Sortie : 
-	- si http status code = 200, alors tableau JSON sous forme de chaîne de caractères avec les événements du planning sous forme d'objets
-	- sinon, texte de l'erreur
+Output: 
+* if http status code = 200, then JSON array as string with schedule events as objects
+* otherwise, error text
 
-### Envoi d'événements modifiés
+### Send changed events
 
 POST url/changedevents.php
 
-Paramètres en entrée :
-	auth : string, clé d'autorisation (publique)
-	events : string, tableau JSON d'objets des éléments modifiés
-	v : string, signature de l'appel (incluant une clé privée)
+Input parameters:
+* auth : string, authorization key (public)
+* events : string, JSON array of objects of modified elements
+* v: string, signature of the call (including a private key)
 	
-Sortie : 
-	- si http status code = 200, alors tableau JSON sous forme de chaîne de caractères avec les ID des événements dont la modification a été prise en compte
-	- sinon, texte de l'erreur
+Output: 
+* if http status code = 200, then JSON array as string with IDs of events whose modification was taken into account.
+* otherwise, error text
 
-### Envoi d'un nouvel événement
+### Send a new event
 
 POST url/newevent.php
 
-Paramètres en entrée :
-	auth : string, clé d'autorisation (publique)
-	event : string, objet JSON de l'événement à ajouter
-	v : string, signature de l'appel (incluant une clé privée)
+Input parameters:
+* auth : string, authorization key (public)
+* event : string, JSON object of the event to add
+* v: string, signature of the call (including a private key)
 	
-Sortie : 
-	- si http status code = 200, alors chaîne de caractères correspondant à la clé unique du nouvel élément
-	- sinon, texte de l'erreur
+Output: 
+* if http status code = 200, then string corresponding to the unique key of the new element
+* otherwise, error text
 
-### Suppression d'un événement
+### Deleting an event
 
 POST url/rmvevent.php
 
-Paramètres en entrée :
-	auth : string, clé d'autorisation (publique)
-	id : string, uid de l'événement à supprimer
-	v : string, signature de l'appel (incluant une clé privée)
+Input parameters:
+* auth : string, authorization key (public)
+* id : string, uid of the event to delete
+* v : string, signature of the call (including a private key)
 	
-Sortie : 
-	- si http status code = 200, suppression effectuée
-	- si http status code = 404, événment inconnu sur le serveur
-	- sinon, texte de l'erreur
+Output: 
+* if http status code = 200, delete done
+* if http status code = 404, unknown event on the server
+* otherwise, text of the er

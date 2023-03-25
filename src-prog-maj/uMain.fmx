@@ -81,7 +81,7 @@ object frmMain: TfrmMain
       Size.Height = 780.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
-      Viewport.Width = 340.000000000000000000
+      Viewport.Width = 324.000000000000000000
       Viewport.Height = 780.000000000000000000
       object lblLabel: TLabel
         Align = Top
@@ -92,7 +92,7 @@ object frmMain: TfrmMain
         Margins.Bottom = 5.000000000000000000
         Position.X = 5.000000000000000000
         Position.Y = 5.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         Text = 'Label'
@@ -108,7 +108,7 @@ object frmMain: TfrmMain
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
       end
@@ -121,7 +121,7 @@ object frmMain: TfrmMain
         Margins.Bottom = 5.000000000000000000
         Position.X = 5.000000000000000000
         Position.Y = 64.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         Text = 'Type'
@@ -137,7 +137,7 @@ object frmMain: TfrmMain
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
       end
@@ -150,7 +150,7 @@ object frmMain: TfrmMain
         Margins.Bottom = 5.000000000000000000
         Position.X = 5.000000000000000000
         Position.Y = 123.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         Text = 'Language'
@@ -166,7 +166,7 @@ object frmMain: TfrmMain
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
       end
@@ -179,7 +179,7 @@ object frmMain: TfrmMain
         Margins.Bottom = 5.000000000000000000
         Position.X = 5.000000000000000000
         Position.Y = 182.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         Text = 'URL'
@@ -196,7 +196,7 @@ object frmMain: TfrmMain
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
       end
@@ -209,7 +209,7 @@ object frmMain: TfrmMain
         Margins.Bottom = 5.000000000000000000
         Position.X = 5.000000000000000000
         Position.Y = 241.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         Text = 'URL Image'
@@ -226,7 +226,7 @@ object frmMain: TfrmMain
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
       end
@@ -239,7 +239,7 @@ object frmMain: TfrmMain
         Margins.Bottom = 5.000000000000000000
         Position.X = 5.000000000000000000
         Position.Y = 300.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         Text = 'Start date'
@@ -255,7 +255,7 @@ object frmMain: TfrmMain
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
       end
@@ -268,7 +268,7 @@ object frmMain: TfrmMain
         Margins.Bottom = 5.000000000000000000
         Position.X = 5.000000000000000000
         Position.Y = 359.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         Text = 'Start time'
@@ -284,7 +284,7 @@ object frmMain: TfrmMain
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
       end
@@ -297,7 +297,7 @@ object frmMain: TfrmMain
         Margins.Bottom = 5.000000000000000000
         Position.X = 5.000000000000000000
         Position.Y = 418.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         Text = 'Stop time'
@@ -313,7 +313,7 @@ object frmMain: TfrmMain
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
       end
@@ -326,7 +326,7 @@ object frmMain: TfrmMain
         Margins.Bottom = 5.000000000000000000
         Position.X = 5.000000000000000000
         Position.Y = 477.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         Text = 'Order'
@@ -343,7 +343,7 @@ object frmMain: TfrmMain
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
       end
@@ -352,7 +352,7 @@ object frmMain: TfrmMain
         Margins.Top = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
         Position.Y = 659.000000000000000000
-        Size.Width = 340.000000000000000000
+        Size.Width = 324.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 20
@@ -385,7 +385,7 @@ object frmMain: TfrmMain
           Margins.Top = 5.000000000000000000
           Margins.Right = 5.000000000000000000
           Margins.Bottom = 5.000000000000000000
-          Size.Width = 160.000000000000000000
+          Size.Width = 152.000000000000000000
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
@@ -399,7 +399,7 @@ object frmMain: TfrmMain
           Margins.Top = 5.000000000000000000
           Margins.Right = 5.000000000000000000
           Margins.Bottom = 5.000000000000000000
-          Size.Width = 160.000000000000000000
+          Size.Width = 152.000000000000000000
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
@@ -415,7 +415,7 @@ object frmMain: TfrmMain
         Margins.Bottom = 5.000000000000000000
         Position.X = 5.000000000000000000
         Position.Y = 719.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 21
@@ -431,7 +431,7 @@ object frmMain: TfrmMain
         Margins.Bottom = 5.000000000000000000
         Position.X = 5.000000000000000000
         Position.Y = 536.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         Text = 'Comment'
@@ -447,12 +447,27 @@ object frmMain: TfrmMain
         Margins.Bottom = 5.000000000000000000
         Position.X = 5.000000000000000000
         Position.Y = 563.000000000000000000
-        Size.Width = 330.000000000000000000
+        Size.Width = 314.000000000000000000
         Size.Height = 86.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 19
-        Viewport.Width = 326.000000000000000000
+        Viewport.Width = 310.000000000000000000
         Viewport.Height = 82.000000000000000000
+      end
+      object btnDuplicateEvent: TButton
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 769.000000000000000000
+        Size.Width = 314.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 22
+        Text = 'Duplicate event'
+        OnClick = btnDuplicateEventClick
       end
     end
   end

@@ -45,6 +45,7 @@ type
     btnDelete: TButton;
     lblComment: TLabel;
     edtComment: TMemo;
+    btnDuplicateEvent: TButton;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure btnSaveToServerClick(Sender: TObject);
@@ -55,6 +56,7 @@ type
     procedure btnDeleteClick(Sender: TObject);
     procedure CheckIfPlanningHasBeenSentToTheServerTimer(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure btnDuplicateEventClick(Sender: TObject);
   private
     FEditedEvent: tplanningevent;
     FCloseWithoutSavingChanges: Boolean;
@@ -239,6 +241,19 @@ begin
       end;
       btnSaveToServerGlowEffect.enabled := Planning.hasChanged;
     end);
+end;
+
+procedure TfrmMain.btnDuplicateEventClick(Sender: TObject);
+begin
+  EditedEvent := nil;
+  edtLabel.Text := 'COPY - ' + edtLabel.Text;
+  // add the event
+  btnSaveClick(Sender);
+  // select the new event
+  // EventsList.ItemIndex := EventsList.Items.Count - 1;
+  EventsList.Selected := EventsList.Items[EventsList.Items.Count - 1];
+  // edit the new event
+  EventsListChange(Sender);
 end;
 
 procedure TfrmMain.btnSaveClick(Sender: TObject);

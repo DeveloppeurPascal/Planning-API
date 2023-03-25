@@ -23,6 +23,11 @@
 			else {
 				item.textContent = tabEvents[i].label;
 			}
+			if (tabEvents[i].url_thumb.length > 0) {
+				let thumb = document.createElement('img');
+				thumb.setAttribute('src', tabEvents[i].url_thumb);
+				item.appendChild(thumb);
+			}
         }
         document.getElementById('planning').appendChild(liste);
     }

@@ -21,6 +21,7 @@ type
     FisDeleted: boolean;
     FEventOrder: int64;
     FEventURLThumb: string;
+    FEventComment: string;
     procedure SetEventLabel(const Value: string);
     procedure SetEventLanguage(const Value: string);
     procedure SetEventStartDate(const Value: string);
@@ -33,6 +34,7 @@ type
     procedure SetisDeleted(const Value: boolean);
     procedure SetEventOrder(const Value: int64);
     procedure SetEventURLThumb(const Value: string);
+    procedure SetEventComment(const Value: string);
   public
     /// <summary>
     /// Unique ID of this event (used for Edit/Delete), given by the server during loading the list and after a create call
@@ -76,6 +78,10 @@ type
     /// Order of the event in the planning (event list)
     /// </summary>
     property EventOrder: int64 read FEventOrder write SetEventOrder;
+    /// <summary>
+    /// Comment
+    /// </summary>
+    property EventComment: string read FEventComment write SetEventComment;
     /// <summary>
     /// To know if this event has been changed since it's last save
     /// </summary>
@@ -190,6 +196,7 @@ const
   CEventURLThumbKey = 'url_thumb'; // property name for JSON object
   CEventUIDKey = 'uid'; // property name for JSON object
   CEventOrderKey = 'order'; // property name for JSON object
+  CEventCommentKey = 'comment'; // property name for JSON object
 
   { TPlanning }
 
@@ -591,6 +598,8 @@ begin
       FEventURLThumb := '';
     if not JSON.TryGetValue<int64>(CEventOrderKey, FEventOrder) then
       FEventOrder := -1;
+    if not JSON.TryGetValue<string>(CEventCommentKey, FEventComment) then
+      FEventComment := '';
   end;
   FisChanged := false;
   FisDeleted := false;
@@ -686,6 +695,13 @@ begin
   result.AddPair(CEventURLKey, FEventURL);
   result.AddPair(CEventURLThumbKey, FEventURLThumb);
   result.AddPair(CEventOrderKey, FEventOrder);
+  result.AddPair(CEventCommentKey, FEventComment);
+end;
+
+procedure TPlanningEvent.SetEventComment(const Value: string);
+begin
+  FisChanged := FisChanged or (FEventURLThumb <> Value);
+  FEventComment := Value;
 end;
 
 procedure TPlanningEvent.SetEventID(const Value: string);

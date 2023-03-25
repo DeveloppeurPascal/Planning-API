@@ -49,6 +49,7 @@ Data stored in JSON :
 		url : Internet address of the event
 		url_thumb : Internet address of a picture for the event
 		order : order number of the event in the list (used for sorting)
+		comment : a comment for this event
 	}
 ]
 ```

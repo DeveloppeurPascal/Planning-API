@@ -39,16 +39,17 @@ Données stockées en JSON :
 ```JSON
 [
 	{
-		uid : ID de l'évenement dans la liste (valeur unique)
+		uid : ID de l'événement dans la liste (valeur unique)
 		label : libellé de l'évenement
 		type : type d'événement (conférence, formation, Twitch, webinaire)
 		startdate : date
 		starttime : heure de début
 		stoptime : heure de fin
 		language : langue
-		url : adresse Internet de l'évènement
-		url_thumb : adresse Internet d'une image pour cet évènement
+		url : adresse Internet de l'événement
+		url_thumb : adresse Internet d'une image pour cet événement
 		order : numéro d'ordre de l'événement dans la liste (utilisé pour les tris)
+		comment : commentaire associé à l'événement
 	}
 ]
 ```

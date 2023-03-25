@@ -8,7 +8,8 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, uPlanning,
   FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base,
   FMX.Layouts, FMX.ListView, FMX.Controls.Presentation, FMX.StdCtrls, FMX.Edit,
-  FMX.Effects, FMX.EditBox, FMX.NumberBox;
+  FMX.Effects, FMX.EditBox, FMX.NumberBox, FMX.Memo.Types, FMX.ScrollBox,
+  FMX.Memo;
 
 type
   TfrmMain = class(TForm)
@@ -42,6 +43,8 @@ type
     btnSave: TButton;
     btnCancel: TButton;
     btnDelete: TButton;
+    lblComment: TLabel;
+    edtComment: TMemo;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure btnSaveToServerClick(Sender: TObject);
@@ -159,6 +162,7 @@ begin
     edtStartTime.Text := FEditedEvent.EventStarttime;
     edtStopTime.Text := FEditedEvent.EventStoptime;
     edtOrder.Value := FEditedEvent.EventOrder;
+    edtComment.Text := FEditedEvent.Eventcomment;
   end
   else
     EventsList.Selected := nil;
@@ -201,6 +205,7 @@ begin
   edtStartTime.Text := '';
   edtStopTime.Text := '';
   edtOrder.Value := -1;
+  edtComment.Text := '';
 
   EventArray.Visible := true;
 end;
@@ -257,6 +262,7 @@ begin
   event.EventStarttime := edtStartTime.Text;
   event.EventStoptime := edtStopTime.Text;
   event.EventOrder := trunc(edtOrder.Value);
+  event.Eventcomment := edtComment.Text;
 
   if assigned(EventsList.Selected) and (EventsList.Selected.Tagobject = event)
     and (EventsList.Selected is TListViewItem) then

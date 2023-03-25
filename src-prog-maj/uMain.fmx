@@ -74,6 +74,7 @@ object frmMain: TfrmMain
     end
     object EventArray: TVertScrollBox
       Align = Right
+      Padding.Bottom = 10.000000000000000000
       Position.X = 340.000000000000000000
       Position.Y = 50.000000000000000000
       Size.Width = 340.000000000000000000

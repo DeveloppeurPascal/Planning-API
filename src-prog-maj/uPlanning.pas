@@ -20,6 +20,7 @@ type
     FisChanged: boolean;
     FisDeleted: boolean;
     FEventOrder: int64;
+    FEventURLThumb: string;
     procedure SetEventLabel(const Value: string);
     procedure SetEventLanguage(const Value: string);
     procedure SetEventStartDate(const Value: string);
@@ -31,6 +32,7 @@ type
     procedure SetisChanged(const Value: boolean);
     procedure SetisDeleted(const Value: boolean);
     procedure SetEventOrder(const Value: int64);
+    procedure SetEventURLThumb(const Value: string);
   public
     /// <summary>
     /// Unique ID of this event (used for Edit/Delete), given by the server during loading the list and after a create call
@@ -66,6 +68,10 @@ type
     /// Web site URL of this event
     /// </summary>
     property EventURL: string read FEventURL write SetEventURL;
+    /// <summary>
+    /// Image URL for this event
+    /// </summary>
+    property EventURLThumb: string read FEventURLThumb write SetEventURLThumb;
     /// <summary>
     /// Order of the event in the planning (event list)
     /// </summary>
@@ -181,6 +187,7 @@ const
   CEventStopTimeKey = 'stoptime'; // property name for JSON object
   CEventLanguageKey = 'language'; // property name for JSON object
   CEventURLKey = 'url'; // property name for JSON object
+  CEventURLThumbKey = 'url_thumb'; // property name for JSON object
   CEventUIDKey = 'uid'; // property name for JSON object
   CEventOrderKey = 'order'; // property name for JSON object
 
@@ -580,6 +587,8 @@ begin
       FEventID := '';
     if not JSON.TryGetValue<string>(CEventURLKey, FEventURL) then
       FEventURL := '';
+    if not JSON.TryGetValue<string>(CEventURLThumbKey, FEventURLThumb) then
+      FEventURLThumb := '';
     if not JSON.TryGetValue<int64>(CEventOrderKey, FEventOrder) then
       FEventOrder := -1;
   end;
@@ -635,6 +644,12 @@ begin
   FEventURL := Value;
 end;
 
+procedure TPlanningEvent.SetEventURLThumb(const Value: string);
+begin
+  FisChanged := FisChanged or (FEventURLThumb <> Value);
+  FEventURLThumb := Value;
+end;
+
 procedure TPlanningEvent.SetisChanged(const Value: boolean);
 begin
   FisChanged := Value;
@@ -669,6 +684,7 @@ begin
   result.AddPair(CEventStopTimeKey, FEventStopTime);
   result.AddPair(CEventLanguageKey, FEventLanguage);
   result.AddPair(CEventURLKey, FEventURL);
+  result.AddPair(CEventURLThumbKey, FEventURLThumb);
   result.AddPair(CEventOrderKey, FEventOrder);
 end;
 

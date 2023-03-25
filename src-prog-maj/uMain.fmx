@@ -2,7 +2,7 @@ object frmMain: TfrmMain
   Left = 0
   Top = 0
   Caption = 'Planning CRUD'
-  ClientHeight = 696
+  ClientHeight = 830
   ClientWidth = 680
   FormFactor.Width = 320
   FormFactor.Height = 480
@@ -14,7 +14,7 @@ object frmMain: TfrmMain
   object UserArray: TLayout
     Align = Client
     Size.Width = 680.000000000000000000
-    Size.Height = 696.000000000000000000
+    Size.Height = 830.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object EventsList: TListView
@@ -23,32 +23,74 @@ object frmMain: TfrmMain
       HeaderAppearanceClassName = 'TListHeaderObjects'
       FooterAppearanceClassName = 'TListHeaderObjects'
       Align = Client
-      Size.Width = 354.000000000000000000
-      Size.Height = 646.000000000000000000
+      Size.Width = 340.000000000000000000
+      Size.Height = 780.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
       ItemAppearanceObjects.ItemObjects.Image.Visible = False
       OnChange = EventsListChange
       SearchVisible = True
     end
-    object EventArray: TPanel
-      Align = Right
-      Position.X = 354.000000000000000000
-      Position.Y = 50.000000000000000000
-      Size.Width = 326.000000000000000000
-      Size.Height = 646.000000000000000000
+    object ToolBar1: TToolBar
+      Size.Width = 680.000000000000000000
+      Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 2
-      object lblLabel: TLabel
-        Align = Top
-        FocusControl = edtLabel
+      TabOrder = 0
+      object btnSaveToServer: TButton
+        Align = Right
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 515.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 160.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Send changes'
+        OnClick = btnSaveToServerClick
+        object btnSaveToServerGlowEffect: TGlowEffect
+          Softness = 0.400000005960464400
+          GlowColor = claGold
+          Opacity = 0.899999976158142100
+        end
+      end
+      object btnAddEvent: TButton
+        Align = Left
         Margins.Left = 5.000000000000000000
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
         Position.X = 5.000000000000000000
         Position.Y = 5.000000000000000000
-        Size.Width = 316.000000000000000000
+        Size.Width = 80.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Add event'
+        OnClick = btnAddEventClick
+      end
+    end
+    object EventArray: TVertScrollBox
+      Align = Right
+      Position.X = 340.000000000000000000
+      Position.Y = 50.000000000000000000
+      Size.Width = 340.000000000000000000
+      Size.Height = 780.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Viewport.Width = 340.000000000000000000
+      Viewport.Height = 780.000000000000000000
+      object lblLabel: TLabel
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 330.000000000000000000
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         Text = 'Label'
@@ -64,20 +106,19 @@ object frmMain: TfrmMain
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Size.Width = 316.000000000000000000
+        Size.Width = 330.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
       end
       object lblType: TLabel
         Align = Top
-        FocusControl = edtType
         Margins.Left = 5.000000000000000000
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
         Position.X = 5.000000000000000000
         Position.Y = 64.000000000000000000
-        Size.Width = 316.000000000000000000
+        Size.Width = 330.000000000000000000
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         Text = 'Type'
@@ -93,7 +134,7 @@ object frmMain: TfrmMain
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Size.Width = 316.000000000000000000
+        Size.Width = 330.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
       end
@@ -106,7 +147,7 @@ object frmMain: TfrmMain
         Margins.Bottom = 5.000000000000000000
         Position.X = 5.000000000000000000
         Position.Y = 123.000000000000000000
-        Size.Width = 316.000000000000000000
+        Size.Width = 330.000000000000000000
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         Text = 'Language'
@@ -122,82 +163,23 @@ object frmMain: TfrmMain
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Size.Width = 316.000000000000000000
+        Size.Width = 330.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
       end
       object lblURL: TLabel
         Align = Top
-        FocusControl = edtURL
         Margins.Left = 5.000000000000000000
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
         Position.X = 5.000000000000000000
         Position.Y = 182.000000000000000000
-        Size.Width = 316.000000000000000000
+        Size.Width = 330.000000000000000000
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         Text = 'URL'
         TabOrder = 6
-      end
-      object edtStartTime: TEdit
-        Touch.InteractiveGestures = [LongTap, DoubleTap]
-        Align = Top
-        TabOrder = 11
-        Position.X = 5.000000000000000000
-        Position.Y = 327.000000000000000000
-        Margins.Left = 5.000000000000000000
-        Margins.Top = 5.000000000000000000
-        Margins.Right = 5.000000000000000000
-        Margins.Bottom = 5.000000000000000000
-        Size.Width = 316.000000000000000000
-        Size.Height = 22.000000000000000000
-        Size.PlatformDefault = False
-      end
-      object lblStartDate: TLabel
-        Align = Top
-        FocusControl = edtStartDate
-        Margins.Left = 5.000000000000000000
-        Margins.Top = 5.000000000000000000
-        Margins.Right = 5.000000000000000000
-        Margins.Bottom = 5.000000000000000000
-        Position.X = 5.000000000000000000
-        Position.Y = 241.000000000000000000
-        Size.Width = 316.000000000000000000
-        Size.Height = 17.000000000000000000
-        Size.PlatformDefault = False
-        Text = 'Start date'
-        TabOrder = 8
-      end
-      object edtStopTime: TEdit
-        Touch.InteractiveGestures = [LongTap, DoubleTap]
-        Align = Top
-        TabOrder = 12
-        Position.X = 5.000000000000000000
-        Position.Y = 386.000000000000000000
-        Margins.Left = 5.000000000000000000
-        Margins.Top = 5.000000000000000000
-        Margins.Right = 5.000000000000000000
-        Margins.Bottom = 5.000000000000000000
-        Size.Width = 316.000000000000000000
-        Size.Height = 22.000000000000000000
-        Size.PlatformDefault = False
-      end
-      object lblStartTime: TLabel
-        Align = Top
-        FocusControl = edtStartTime
-        Margins.Left = 5.000000000000000000
-        Margins.Top = 5.000000000000000000
-        Margins.Right = 5.000000000000000000
-        Margins.Bottom = 5.000000000000000000
-        Position.X = 5.000000000000000000
-        Position.Y = 300.000000000000000000
-        Size.Width = 316.000000000000000000
-        Size.Height = 17.000000000000000000
-        Size.PlatformDefault = False
-        Text = 'Start time'
-        TabOrder = 10
       end
       object edtURL: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
@@ -210,36 +192,149 @@ object frmMain: TfrmMain
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Size.Width = 316.000000000000000000
+        Size.Width = 330.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
       end
-      object lblStoptime: TLabel
+      object lblURLThumb: TLabel
         Align = Top
-        FocusControl = edtStopTime
         Margins.Left = 5.000000000000000000
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
         Position.X = 5.000000000000000000
-        Position.Y = 359.000000000000000000
-        Size.Width = 316.000000000000000000
+        Position.Y = 241.000000000000000000
+        Size.Width = 330.000000000000000000
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
-        Text = 'Stop time'
-        TabOrder = 13
+        Text = 'URL Image'
+        TabOrder = 8
       end
-      object edtStartDate: TEdit
+      object edtURLThumb: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Top
         TabOrder = 9
+        KeyboardType = URL
         Position.X = 5.000000000000000000
         Position.Y = 268.000000000000000000
         Margins.Left = 5.000000000000000000
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Size.Width = 316.000000000000000000
+        Size.Width = 330.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object lblStartDate: TLabel
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 300.000000000000000000
+        Size.Width = 330.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Start date'
+        TabOrder = 10
+      end
+      object edtStartDate: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 11
+        Position.X = 5.000000000000000000
+        Position.Y = 327.000000000000000000
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 330.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object lblStartTime: TLabel
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 359.000000000000000000
+        Size.Width = 330.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Start time'
+        TabOrder = 12
+      end
+      object edtStartTime: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 13
+        Position.X = 5.000000000000000000
+        Position.Y = 386.000000000000000000
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 330.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object lblStoptime: TLabel
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 418.000000000000000000
+        Size.Width = 330.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Stop time'
+        TabOrder = 14
+      end
+      object edtStopTime: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 15
+        Position.X = 5.000000000000000000
+        Position.Y = 445.000000000000000000
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 330.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object lblOrder: TLabel
+        Align = Top
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 477.000000000000000000
+        Size.Width = 330.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Order'
+        TabOrder = 16
+      end
+      object edtOrder: TNumberBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 17
+        Cursor = crIBeam
+        Position.X = 5.000000000000000000
+        Position.Y = 504.000000000000000000
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 330.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
       end
@@ -247,11 +342,11 @@ object frmMain: TfrmMain
         Align = Top
         Margins.Top = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Position.Y = 477.000000000000000000
-        Size.Width = 326.000000000000000000
+        Position.Y = 536.000000000000000000
+        Size.Width = 340.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 16
+        TabOrder = 18
         ColumnCollection = <
           item
             Value = 50.000000000000000000
@@ -281,7 +376,7 @@ object frmMain: TfrmMain
           Margins.Top = 5.000000000000000000
           Margins.Right = 5.000000000000000000
           Margins.Bottom = 5.000000000000000000
-          Size.Width = 153.000000000000000000
+          Size.Width = 160.000000000000000000
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
@@ -295,7 +390,7 @@ object frmMain: TfrmMain
           Margins.Top = 5.000000000000000000
           Margins.Right = 5.000000000000000000
           Margins.Bottom = 5.000000000000000000
-          Size.Width = 153.000000000000000000
+          Size.Width = 160.000000000000000000
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
@@ -303,96 +398,20 @@ object frmMain: TfrmMain
           OnClick = btnCancelClick
         end
       end
-      object Layout1: TLayout
-        Align = Top
-        Position.Y = 532.000000000000000000
-        Size.Width = 326.000000000000000000
-        Size.Height = 50.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 17
-        object btnDelete: TButton
-          Align = Client
-          Margins.Left = 5.000000000000000000
-          Margins.Top = 5.000000000000000000
-          Margins.Right = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Size.Width = 316.000000000000000000
-          Size.Height = 40.000000000000000000
-          Size.PlatformDefault = False
-          TabOrder = 0
-          Text = 'Delete event'
-          OnClick = btnDeleteClick
-        end
-      end
-      object lblOrder: TLabel
+      object btnDelete: TButton
         Align = Top
         Margins.Left = 5.000000000000000000
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
         Position.X = 5.000000000000000000
-        Position.Y = 418.000000000000000000
-        Size.Width = 316.000000000000000000
-        Size.Height = 17.000000000000000000
-        Size.PlatformDefault = False
-        Text = 'Order'
-        TabOrder = 14
-      end
-      object edtOrder: TNumberBox
-        Touch.InteractiveGestures = [LongTap, DoubleTap]
-        Align = Top
-        TabOrder = 15
-        Cursor = crIBeam
-        Position.X = 5.000000000000000000
-        Position.Y = 445.000000000000000000
-        Margins.Left = 5.000000000000000000
-        Margins.Top = 5.000000000000000000
-        Margins.Right = 5.000000000000000000
-        Margins.Bottom = 5.000000000000000000
-        Size.Width = 316.000000000000000000
-        Size.Height = 22.000000000000000000
-        Size.PlatformDefault = False
-      end
-    end
-    object ToolBar1: TToolBar
-      Size.Width = 680.000000000000000000
-      Size.Height = 50.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 0
-      object btnSaveToServer: TButton
-        Align = Right
-        Margins.Left = 5.000000000000000000
-        Margins.Top = 5.000000000000000000
-        Margins.Right = 5.000000000000000000
-        Margins.Bottom = 5.000000000000000000
-        Position.X = 515.000000000000000000
-        Position.Y = 5.000000000000000000
-        Size.Width = 160.000000000000000000
+        Position.Y = 596.000000000000000000
+        Size.Width = 330.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 1
-        Text = 'Send changes'
-        OnClick = btnSaveToServerClick
-        object btnSaveToServerGlowEffect: TGlowEffect
-          Softness = 0.400000005960464500
-          GlowColor = claGold
-          Opacity = 0.899999976158142100
-        end
-      end
-      object btnAddEvent: TButton
-        Align = Left
-        Margins.Left = 5.000000000000000000
-        Margins.Top = 5.000000000000000000
-        Margins.Right = 5.000000000000000000
-        Margins.Bottom = 5.000000000000000000
-        Position.X = 5.000000000000000000
-        Position.Y = 5.000000000000000000
-        Size.Width = 80.000000000000000000
-        Size.Height = 40.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 0
-        Text = 'Add event'
-        OnClick = btnAddEventClick
+        TabOrder = 19
+        Text = 'Delete event'
+        OnClick = btnDeleteClick
       end
     end
   end

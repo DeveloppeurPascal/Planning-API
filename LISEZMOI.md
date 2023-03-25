@@ -46,7 +46,8 @@ Données stockées en JSON :
 		starttime : heure de début
 		stoptime : heure de fin
 		language : langue
-		url : adresse Internet de l'évenement
+		url : adresse Internet de l'évènement
+		url_thumb : adresse Internet d'une image pour cet évènement
 		order : numéro d'ordre de l'événement dans la liste (utilisé pour les tris)
 	}
 ]

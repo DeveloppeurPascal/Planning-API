@@ -120,8 +120,8 @@ begin
   Planning := tplanning.CreateFromURL(CPlanningServerURL, APIReadyEvent,
     APIErrorEvent);
 
-  edtOrder.Min := low(integer);
-  edtOrder.Max := high(integer);
+  edtOrder.Min := low(int64);
+  edtOrder.Max := high(int64);
 end;
 
 procedure TfrmMain.FormDestroy(Sender: TObject);

@@ -19,7 +19,7 @@ type
     FEventURL: string;
     FisChanged: boolean;
     FisDeleted: boolean;
-    FEventOrder: integer;
+    FEventOrder: int64;
     procedure SetEventLabel(const Value: string);
     procedure SetEventLanguage(const Value: string);
     procedure SetEventStartDate(const Value: string);
@@ -30,7 +30,7 @@ type
     procedure SetEventURL(const Value: string);
     procedure SetisChanged(const Value: boolean);
     procedure SetisDeleted(const Value: boolean);
-    procedure SetEventOrder(const Value: integer);
+    procedure SetEventOrder(const Value: int64);
   public
     /// <summary>
     /// Unique ID of this event (used for Edit/Delete), given by the server during loading the list and after a create call
@@ -69,7 +69,7 @@ type
     /// <summary>
     /// Order of the event in the planning (event list)
     /// </summary>
-    property EventOrder: integer read FEventOrder write SetEventOrder;
+    property EventOrder: int64 read FEventOrder write SetEventOrder;
     /// <summary>
     /// To know if this event has been changed since it's last save
     /// </summary>
@@ -580,7 +580,7 @@ begin
       FEventID := '';
     if not JSON.TryGetValue<string>(CEventURLKey, FEventURL) then
       FEventURL := '';
-    if not JSON.TryGetValue<integer>(CEventOrderKey, FEventOrder) then
+    if not JSON.TryGetValue<int64>(CEventOrderKey, FEventOrder) then
       FEventOrder := -1;
   end;
   FisChanged := false;
@@ -599,7 +599,7 @@ begin
   FEventLanguage := Value;
 end;
 
-procedure TPlanningEvent.SetEventOrder(const Value: integer);
+procedure TPlanningEvent.SetEventOrder(const Value: int64);
 begin
   FisChanged := FisChanged or (FEventOrder <> Value);
   FEventOrder := Value;
@@ -684,7 +684,12 @@ end;
 function TPlanningEventComparer.Compare(const Left,
   Right: TPlanningEvent): integer;
 begin
-  result := Left.EventOrder - Right.EventOrder;
+  if (Left.EventOrder < Right.EventOrder) then
+    result := -1
+  else if (Left.EventOrder > Right.EventOrder) then
+    result := 1
+  else
+    result := 0;
 end;
 
 end.

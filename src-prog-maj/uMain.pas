@@ -330,4 +330,8 @@ initialization
 {$ENDIF}
 TDialogService.PreferredMode := TDialogService.TPreferredMode.Async;
 
+{$IFDEF MACOS}
+globalusemetal := true;
+{$ENDIF}
+
 end.

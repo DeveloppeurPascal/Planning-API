@@ -1,0 +1,454 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD>
+<BODY>
+    <OBJECT type="text/site properties">
+      <param name="Window Styles" value="0x800227">
+    </OBJECT>
+    <UL>      <LI> <OBJECT type="text/sitemap">
+          <param name="Name" value="PlanningCRUD">
+          <param name="Local" value="PlanningCRUD.html">
+          </OBJECT>
+          <UL>
+              <LI> <OBJECT type="text/sitemap">
+                  <param name="Name" value="uMain">
+                  <param name="Local" value="uMain.html">
+                  </OBJECT>
+                  <UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Classes">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="TfrmMain">
+                                  <param name="Local" value="uMain.TfrmMain.html">
+                                  </OBJECT>
+                                  <UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Properties">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="EditedEvent">
+                                                  <param name="Local" value="uMain.TfrmMain.EditedEvent.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Methods">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="CheckIfPlanningHasBeenSentToTheServerTimer">
+                                                  <param name="Local" value="uMain.TfrmMain.CheckIfPlanningHasBeenSentToTheServerTimer.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="EventsListChange">
+                                                  <param name="Local" value="uMain.TfrmMain.EventsListChange.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="FormCloseQuery">
+                                                  <param name="Local" value="uMain.TfrmMain.FormCloseQuery.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="FormCreate">
+                                                  <param name="Local" value="uMain.TfrmMain.FormCreate.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="FormDestroy">
+                                                  <param name="Local" value="uMain.TfrmMain.FormDestroy.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnAddEventClick">
+                                                  <param name="Local" value="uMain.TfrmMain.btnAddEventClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnCancelClick">
+                                                  <param name="Local" value="uMain.TfrmMain.btnCancelClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnDeleteClick">
+                                                  <param name="Local" value="uMain.TfrmMain.btnDeleteClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnDuplicateEventClick">
+                                                  <param name="Local" value="uMain.TfrmMain.btnDuplicateEventClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnSaveClick">
+                                                  <param name="Local" value="uMain.TfrmMain.btnSaveClick.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnSaveToServerClick">
+                                                  <param name="Local" value="uMain.TfrmMain.btnSaveToServerClick.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Fields">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="CheckIfPlanningHasBeenSentToTheServer">
+                                                  <param name="Local" value="uMain.TfrmMain.CheckIfPlanningHasBeenSentToTheServer.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="EventArray">
+                                                  <param name="Local" value="uMain.TfrmMain.EventArray.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="EventsList">
+                                                  <param name="Local" value="uMain.TfrmMain.EventsList.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="GridPanelLayout1">
+                                                  <param name="Local" value="uMain.TfrmMain.GridPanelLayout1.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Planning">
+                                                  <param name="Local" value="uMain.TfrmMain.Planning.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="ToolBar1">
+                                                  <param name="Local" value="uMain.TfrmMain.ToolBar1.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="UserArray">
+                                                  <param name="Local" value="uMain.TfrmMain.UserArray.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnAddEvent">
+                                                  <param name="Local" value="uMain.TfrmMain.btnAddEvent.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnCancel">
+                                                  <param name="Local" value="uMain.TfrmMain.btnCancel.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnDelete">
+                                                  <param name="Local" value="uMain.TfrmMain.btnDelete.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnDuplicateEvent">
+                                                  <param name="Local" value="uMain.TfrmMain.btnDuplicateEvent.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnSave">
+                                                  <param name="Local" value="uMain.TfrmMain.btnSave.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnSaveToServer">
+                                                  <param name="Local" value="uMain.TfrmMain.btnSaveToServer.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="btnSaveToServerGlowEffect">
+                                                  <param name="Local" value="uMain.TfrmMain.btnSaveToServerGlowEffect.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtComment">
+                                                  <param name="Local" value="uMain.TfrmMain.edtComment.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtLabel">
+                                                  <param name="Local" value="uMain.TfrmMain.edtLabel.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtLanguage">
+                                                  <param name="Local" value="uMain.TfrmMain.edtLanguage.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtOrder">
+                                                  <param name="Local" value="uMain.TfrmMain.edtOrder.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtStartDate">
+                                                  <param name="Local" value="uMain.TfrmMain.edtStartDate.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtStartTime">
+                                                  <param name="Local" value="uMain.TfrmMain.edtStartTime.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtStopTime">
+                                                  <param name="Local" value="uMain.TfrmMain.edtStopTime.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtType">
+                                                  <param name="Local" value="uMain.TfrmMain.edtType.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtURL">
+                                                  <param name="Local" value="uMain.TfrmMain.edtURL.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="edtURLThumb">
+                                                  <param name="Local" value="uMain.TfrmMain.edtURLThumb.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblComment">
+                                                  <param name="Local" value="uMain.TfrmMain.lblComment.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblLabel">
+                                                  <param name="Local" value="uMain.TfrmMain.lblLabel.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblLanguage">
+                                                  <param name="Local" value="uMain.TfrmMain.lblLanguage.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblOrder">
+                                                  <param name="Local" value="uMain.TfrmMain.lblOrder.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblStartDate">
+                                                  <param name="Local" value="uMain.TfrmMain.lblStartDate.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblStartTime">
+                                                  <param name="Local" value="uMain.TfrmMain.lblStartTime.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblStoptime">
+                                                  <param name="Local" value="uMain.TfrmMain.lblStoptime.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblType">
+                                                  <param name="Local" value="uMain.TfrmMain.lblType.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblURL">
+                                                  <param name="Local" value="uMain.TfrmMain.lblURL.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="lblURLThumb">
+                                                  <param name="Local" value="uMain.TfrmMain.lblURLThumb.html">
+                                                  </OBJECT>
+                                          </UL>
+                                  </UL>
+                          </UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Variables">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="frmMain">
+                                  <param name="Local" value="uMain.frmMain.html">
+                                  </OBJECT>
+                          </UL>
+                  </UL>
+              <LI> <OBJECT type="text/sitemap">
+                  <param name="Name" value="uPlanning">
+                  <param name="Local" value="uPlanning.html">
+                  </OBJECT>
+                  <UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Classes">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="TPlanning">
+                                  <param name="Local" value="uPlanning.TPlanning.html">
+                                  </OBJECT>
+                                  <UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Constructors">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Create">
+                                                  <param name="Local" value="uPlanning.TPlanning.Create.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="CreateFromURL">
+                                                  <param name="Local" value="uPlanning.TPlanning.CreateFromURL.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Properties">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="onAfterSave">
+                                                  <param name="Local" value="uPlanning.TPlanning.onAfterSave.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="onCreateError">
+                                                  <param name="Local" value="uPlanning.TPlanning.onCreateError.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="onReady">
+                                                  <param name="Local" value="uPlanning.TPlanning.onReady.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="onSaveError">
+                                                  <param name="Local" value="uPlanning.TPlanning.onSaveError.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Methods">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Save">
+                                                  <param name="Local" value="uPlanning.TPlanning.Save.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="SendChangedEventsToServerURL">
+                                                  <param name="Local" value="uPlanning.TPlanning.SendChangedEventsToServerURL.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="SendDeletedEventToServerURL">
+                                                  <param name="Local" value="uPlanning.TPlanning.SendDeletedEventToServerURL.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="SendNewEventToServerURL">
+                                                  <param name="Local" value="uPlanning.TPlanning.SendNewEventToServerURL.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="SortPlanningEvents">
+                                                  <param name="Local" value="uPlanning.TPlanning.SortPlanningEvents.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="hasChanged">
+                                                  <param name="Local" value="uPlanning.TPlanning.hasChanged.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Fields">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="FServerURL">
+                                                  <param name="Local" value="uPlanning.TPlanning.FServerURL.html">
+                                                  </OBJECT>
+                                          </UL>
+                                  </UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="TPlanningEvent">
+                                  <param name="Local" value="uPlanning.TPlanningEvent.html">
+                                  </OBJECT>
+                                  <UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Constructors">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="CreateFromJSONObject">
+                                                  <param name="Local" value="uPlanning.TPlanningEvent.CreateFromJSONObject.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Properties">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="EventComment">
+                                                  <param name="Local" value="uPlanning.TPlanningEvent.EventComment.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="EventID">
+                                                  <param name="Local" value="uPlanning.TPlanningEvent.EventID.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="EventLabel">
+                                                  <param name="Local" value="uPlanning.TPlanningEvent.EventLabel.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="EventLanguage">
+                                                  <param name="Local" value="uPlanning.TPlanningEvent.EventLanguage.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="EventOrder">
+                                                  <param name="Local" value="uPlanning.TPlanningEvent.EventOrder.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="EventStartDate">
+                                                  <param name="Local" value="uPlanning.TPlanningEvent.EventStartDate.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="EventStartTime">
+                                                  <param name="Local" value="uPlanning.TPlanningEvent.EventStartTime.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="EventStopTime">
+                                                  <param name="Local" value="uPlanning.TPlanningEvent.EventStopTime.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="EventType">
+                                                  <param name="Local" value="uPlanning.TPlanningEvent.EventType.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="EventURL">
+                                                  <param name="Local" value="uPlanning.TPlanningEvent.EventURL.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="EventURLThumb">
+                                                  <param name="Local" value="uPlanning.TPlanningEvent.EventURLThumb.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="isChanged">
+                                                  <param name="Local" value="uPlanning.TPlanningEvent.isChanged.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="isDeleted">
+                                                  <param name="Local" value="uPlanning.TPlanningEvent.isDeleted.html">
+                                                  </OBJECT>
+                                          </UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Methods">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="ToJSON">
+                                                  <param name="Local" value="uPlanning.TPlanningEvent.ToJSON.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="ToJSONObject">
+                                                  <param name="Local" value="uPlanning.TPlanningEvent.ToJSONObject.html">
+                                                  </OBJECT>
+                                          </UL>
+                                  </UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="TPlanningEventComparer">
+                                  <param name="Local" value="uPlanning.TPlanningEventComparer.html">
+                                  </OBJECT>
+                                  <UL>
+                                      <LI> <OBJECT type="text/sitemap">
+                                          <param name="Name" value="Methods">
+                                          </OBJECT>
+                                          <UL>
+                                              <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="Compare">
+                                                  <param name="Local" value="uPlanning.TPlanningEventComparer.Compare.html">
+                                                  </OBJECT>
+                                          </UL>
+                                  </UL>
+                          </UL>
+                      <LI> <OBJECT type="text/sitemap">
+                          <param name="Name" value="Delegates">
+                          </OBJECT>
+                          <UL>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="TPlanningAPIErrorEvent">
+                                  <param name="Local" value="uPlanning.TPlanningAPIErrorEvent.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="TPlanningAfterSaveEvent">
+                                  <param name="Local" value="uPlanning.TPlanningAfterSaveEvent.html">
+                                  </OBJECT>
+                              <LI> <OBJECT type="text/sitemap">
+                                  <param name="Name" value="TPlanningReadyEvent">
+                                  <param name="Local" value="uPlanning.TPlanningReadyEvent.html">
+                                  </OBJECT>
+                          </UL>
+                  </UL>
+              <LI> <OBJECT type="text/sitemap">
+                  <param name="Name" value="uPlanningConsts">
+                  <param name="Local" value="uPlanningConsts.html">
+                  </OBJECT>
+          </UL>
+    </UL>
+</BODY>
+</HTML>
